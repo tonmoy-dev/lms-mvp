@@ -17,6 +17,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { courseIconMap, courseTypeStyles } from "@/lib/course-utils";
 import { Course, CourseType, CourseCategory } from "@/data/courses";
+import { RevealBlock } from "@/components/motion/reveal";
 
 const courseTypes: CourseType[] = ["Live", "Bootcamp", "Hybrid", "Self-paced"];
 const allCategories: (CourseCategory | "All")[] = [
@@ -228,7 +229,7 @@ export function CoursesClient({ courses }: CoursesClientProps) {
   }, [courses, search, activeCategory, activeTypes, sortBy]);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <RevealBlock className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Search + Sort bar */}
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
         <div className="relative flex-1">
@@ -325,6 +326,6 @@ export function CoursesClient({ courses }: CoursesClientProps) {
           </button>
         </div>
       )}
-    </div>
+    </RevealBlock>
   );
 }

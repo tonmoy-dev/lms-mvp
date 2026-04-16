@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { RevealBlock } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
   title: "Terms of Service — DevPath Academy",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950">
-      <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+      <RevealBlock className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
           Terms of Service
         </h1>
@@ -81,7 +82,7 @@ export default function TermsPage() {
             </p>
           </section>
         </div>
-      </div>
+      </RevealBlock>
     </div>
   );
 }

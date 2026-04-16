@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { lightTransition } from "@/lib/page-motion";
 
 const perks = [
   "Set your own schedule and curriculum",
@@ -17,10 +18,10 @@ export function InstructorCta() {
     <section id="teach" className="bg-slate-900 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={lightTransition()}
           className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-center"
         >
           {/* Left copy */}

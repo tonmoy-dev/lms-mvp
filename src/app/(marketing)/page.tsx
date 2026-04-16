@@ -1,5 +1,5 @@
-import HomePageLoader from "./home-page-loader";
+import HomeSections from "./home-sections";
 
 export default function HomePage() {
-  return <HomePageLoader />;
+  return <HomeSections />;
 }

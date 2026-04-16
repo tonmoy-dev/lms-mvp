@@ -3,6 +3,7 @@ import Link from "next/link";
 import { blogPosts, getBlogPostBySlug } from "@/data/blog";
 import { Calendar, Clock, ArrowLeft, Tag, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { RevealBlock } from "@/components/motion/reveal";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -82,7 +83,7 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950">
       {/* Hero banner */}
-      <div
+      <RevealBlock
         className={cn(
           "h-64 sm:h-80 w-full bg-linear-to-br flex items-end",
           post.gradientFrom,
@@ -102,9 +103,9 @@ export default async function BlogPostPage({ params }: Props) {
           </span>
           <h1 className="text-2xl sm:text-3xl font-bold text-white leading-tight">{post.title}</h1>
         </div>
-      </div>
+      </RevealBlock>
 
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 py-10">
+      <RevealBlock delay={0.05} className="mx-auto max-w-3xl px-4 sm:px-6 py-10">
         {/* Author + meta */}
         <div className="flex items-center gap-4 pb-8 border-b border-border">
           <div
@@ -216,7 +217,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </section>
         )}
-      </div>
+      </RevealBlock>
     </div>
   );
 }

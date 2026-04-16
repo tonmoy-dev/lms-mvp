@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { CoursesClient } from "@/components/sections/courses-client";
+import { RevealSection } from "@/components/motion/reveal";
 import { courses, categories } from "@/data/courses";
 
 export const metadata = {
@@ -11,7 +12,7 @@ export const metadata = {
 export default function CoursesPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-      <div className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 py-12">
+      <RevealSection className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Explore Courses
@@ -34,7 +35,7 @@ export default function CoursesPage() {
             ))}
           </div>
         </div>
-      </div>
+      </RevealSection>
 
       <Suspense>
         <CoursesClient courses={courses} />

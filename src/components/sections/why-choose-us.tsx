@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { homeGridContainerVariants, homeGridItemVariants } from "@/lib/page-motion";
 import {
   BadgeCheck,
   Video,
@@ -70,14 +71,14 @@ export function WhyChooseUs() {
 
         {/* Feature grid */}
         <motion.div
-          variants={containerVariants}
+          variants={homeGridContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
           {features.map(({ icon: Icon, title, description, iconBg, iconColor }) => (
-            <motion.div key={title} variants={cardVariants}>
+            <motion.div key={title} variants={homeGridItemVariants}>
               <Card className="h-full border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                 <CardContent className="flex flex-col gap-4 p-6">
                   <div

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { blogPosts } from "@/data/blog";
 import { Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { RevealSection } from "@/components/motion/reveal";
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-US", {
@@ -23,7 +24,7 @@ export default function BlogPage() {
   return (
     <div className="bg-white dark:bg-slate-950 min-h-screen">
       {/* Hero */}
-      <section className="border-b border-border bg-slate-50 dark:bg-slate-900 py-14 sm:py-20 px-4">
+      <RevealSection className="border-b border-border bg-slate-50 dark:bg-slate-900 py-14 sm:py-20 px-4">
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-900/20 px-3 py-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400 mb-4">
             <BookOpen className="h-3.5 w-3.5" />
@@ -37,12 +38,12 @@ export default function BlogPage() {
             cloud engineering, and career growth.
           </p>
         </div>
-      </section>
+      </RevealSection>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         {/* Featured posts */}
         {featured.length > 0 && (
-          <section className="mb-16">
+          <RevealSection className="mb-16">
             <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
               <span className="inline-block h-3 w-3 rounded-full bg-indigo-500" />
               Featured Articles
@@ -104,11 +105,11 @@ export default function BlogPage() {
                 </Link>
               ))}
             </div>
-          </section>
+          </RevealSection>
         )}
 
         {/* All articles */}
-        <section>
+        <RevealSection>
           <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
             <span className="inline-block h-3 w-3 rounded-full bg-slate-400" />
             All Articles
@@ -169,7 +170,7 @@ export default function BlogPage() {
               </Link>
             ))}
           </div>
-        </section>
+        </RevealSection>
       </div>
     </div>
   );

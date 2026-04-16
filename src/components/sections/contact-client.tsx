@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { RevealBlock } from "@/components/motion/reveal";
 
 const contactInfo = [
   {
@@ -47,7 +48,7 @@ export function ContactClient() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+    <RevealBlock className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
         {/* Info cards */}
         <div className="space-y-4 lg:col-span-2">
@@ -164,6 +165,6 @@ export function ContactClient() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </RevealBlock>
   );
 }

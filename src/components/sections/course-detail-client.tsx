@@ -24,6 +24,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { courseIconMapLg, courseTypeStyles, courseLevelStyles } from "@/lib/course-utils";
 import type { Course, CourseType, CurriculumSection, Batch } from "@/data/courses";
+import { RevealBlock } from "@/components/motion/reveal";
 import { getReviewsForCourse, getRatingDistribution, type CourseReview } from "@/data/reviews";
 
 /* ─────────────── Tab types ─────────────── */
@@ -479,7 +480,8 @@ export function CourseDetailClient({ course }: { course: Course }) {
   return (
     <>
       {/* Breadcrumb */}
-      <nav className="border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950">
+      <RevealBlock>
+        <nav className="border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950">
         <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
           <ol className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
             <li>
@@ -497,9 +499,10 @@ export function CourseDetailClient({ course }: { course: Course }) {
             <li className="max-w-[200px] truncate font-medium text-slate-800 dark:text-slate-200">{course.title}</li>
           </ol>
         </div>
-      </nav>
+        </nav>
+      </RevealBlock>
 
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <RevealBlock delay={0.05} className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
           {/* ── Left column ── */}
           <div className="flex-1 min-w-0">
@@ -743,7 +746,7 @@ export function CourseDetailClient({ course }: { course: Course }) {
             <PricingSidebar course={course} />
           </div>
         </div>
-      </div>
+      </RevealBlock>
     </>
   );
 }

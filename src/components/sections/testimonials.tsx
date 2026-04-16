@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { homeGridContainerVariants, homeGridItemVariants } from "@/lib/page-motion";
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -38,16 +39,6 @@ const testimonials = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.13 } },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0, 0, 0.2, 1] as const } },
-};
-
 export function Testimonials() {
   return (
     <section className="bg-slate-50 dark:bg-slate-900 py-20">
@@ -64,14 +55,14 @@ export function Testimonials() {
 
         {/* Cards */}
         <motion.div
-          variants={containerVariants}
+          variants={homeGridContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           className="grid grid-cols-1 gap-6 md:grid-cols-3"
         >
           {testimonials.map(({ stars, quote, name, initials, course, location, avatarColor }) => (
-            <motion.div key={name} variants={cardVariants}>
+            <motion.div key={name} variants={homeGridItemVariants}>
               <Card className="flex h-full flex-col border border-slate-200 dark:border-slate-700 shadow-sm">
                 <CardContent className="flex flex-1 flex-col gap-4 p-6">
                   {/* Stars */}

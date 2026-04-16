@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { homeHeroContainerVariants, homeHeroItemVariants } from "@/lib/page-motion";
 import { CheckCircle, Sparkles, ArrowRight, BookOpen } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -65,19 +66,6 @@ function StatCard({
   );
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.12 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0, 0, 0.2, 1] as const } },
-};
-
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-white dark:bg-slate-950 pb-20 pt-16">
@@ -97,12 +85,12 @@ export function Hero() {
 
       <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <motion.div
-          variants={containerVariants}
+          variants={homeHeroContainerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Trust badge */}
-          <motion.div variants={itemVariants} className="mb-6 flex justify-center">
+          <motion.div variants={homeHeroItemVariants} className="mb-6 flex justify-center">
             <Badge
               variant="secondary"
               className="gap-1.5 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-indigo-700 text-sm font-medium"
@@ -114,7 +102,7 @@ export function Hero() {
 
           {/* Main headline */}
           <motion.h1
-            variants={itemVariants}
+            variants={homeHeroItemVariants}
             className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Build Real Skills.{" "}
@@ -125,7 +113,7 @@ export function Hero() {
 
           {/* Subtext */}
           <motion.p
-            variants={itemVariants}
+            variants={homeHeroItemVariants}
             className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400"
           >
             Learn web development, AI, and data science from seasoned industry
@@ -135,7 +123,7 @@ export function Hero() {
 
           {/* CTA buttons */}
           <motion.div
-            variants={itemVariants}
+            variants={homeHeroItemVariants}
             className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
             <Link
@@ -160,7 +148,7 @@ export function Hero() {
 
           {/* Stats row */}
           <motion.div
-            variants={itemVariants}
+            variants={homeHeroItemVariants}
             className="mt-14 flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-16"
           >
             {stats.map((stat) => (
@@ -170,7 +158,7 @@ export function Hero() {
 
           {/* Divider */}
           <motion.div
-            variants={itemVariants}
+            variants={homeHeroItemVariants}
             className="mt-10 border-t border-slate-100 pt-8"
           >
             {/* Trust badges */}

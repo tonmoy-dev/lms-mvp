@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { homeGridContainerVariants, homeGridItemVariants } from "@/lib/page-motion";
 import { ArrowRight, Globe, Brain, BarChart2, Layers } from "lucide-react";
 import { CourseCard, CourseCardProps } from "@/components/ui/course-card";
 
@@ -60,16 +61,6 @@ const courses: CourseCardProps[] = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0, 0, 0.2, 1] as const } },
-};
-
 export function FeaturedCourses() {
   return (
     <section id="courses" className="bg-slate-50 dark:bg-slate-900 py-20">
@@ -86,14 +77,14 @@ export function FeaturedCourses() {
 
         {/* Grid — horizontal scroll on mobile, 4 cols on desktop */}
         <motion.div
-          variants={containerVariants}
+          variants={homeGridContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
           {courses.map((course) => (
-            <motion.div key={course.slug} variants={cardVariants}>
+            <motion.div key={course.slug} variants={homeGridItemVariants}>
               <CourseCard {...course} />
             </motion.div>
           ))}

@@ -1,17 +1,60 @@
 "use client";
 
-import { Hero } from "@/components/sections/hero";
-import { FeaturedCourses } from "@/components/sections/featured-courses";
-import { WhyChooseUs } from "@/components/sections/why-choose-us";
-import { Testimonials } from "@/components/sections/testimonials";
-import { InstructorCta } from "@/components/sections/instructor-cta";
-import { FinalCta } from "@/components/sections/final-cta";
+import dynamic from "next/dynamic";
+import {
+  HeroSkeleton,
+  FeaturedCoursesSkeleton,
+  WhyChooseUsSkeleton,
+  TestimonialsSkeleton,
+  InstructorCtaSkeleton,
+  FinalCtaSkeleton,
+} from "@/components/skeletons/home-skeletons";
 
-/**
- * Client-only bundle: avoids React hydration errors when browser extensions
- * (e.g. Dark Reader) mutate SVGs in the DOM before hydration. Search engines
- * that execute JavaScript still see full content.
- */
+const Hero = dynamic(
+  () => import("@/components/sections/hero").then((m) => ({ default: m.Hero })),
+  { loading: () => <HeroSkeleton /> }
+);
+
+const FeaturedCourses = dynamic(
+  () =>
+    import("@/components/sections/featured-courses").then((m) => ({
+      default: m.FeaturedCourses,
+    })),
+  { loading: () => <FeaturedCoursesSkeleton /> }
+);
+
+const WhyChooseUs = dynamic(
+  () =>
+    import("@/components/sections/why-choose-us").then((m) => ({
+      default: m.WhyChooseUs,
+    })),
+  { loading: () => <WhyChooseUsSkeleton /> }
+);
+
+const Testimonials = dynamic(
+  () =>
+    import("@/components/sections/testimonials").then((m) => ({
+      default: m.Testimonials,
+    })),
+  { loading: () => <TestimonialsSkeleton /> }
+);
+
+const InstructorCta = dynamic(
+  () =>
+    import("@/components/sections/instructor-cta").then((m) => ({
+      default: m.InstructorCta,
+    })),
+  { loading: () => <InstructorCtaSkeleton /> }
+);
+
+const FinalCta = dynamic(
+  () =>
+    import("@/components/sections/final-cta").then((m) => ({
+      default: m.FinalCta,
+    })),
+  { loading: () => <FinalCtaSkeleton /> }
+);
+
 export default function HomeSections() {
   return (
     <>

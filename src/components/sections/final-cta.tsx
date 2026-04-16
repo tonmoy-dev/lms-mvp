@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { lightTransition } from "@/lib/page-motion";
 
 export function FinalCta() {
   return (
@@ -22,10 +23,10 @@ export function FinalCta() {
 
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
+          transition={lightTransition()}
         >
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
             Start Your Learning Journey Today

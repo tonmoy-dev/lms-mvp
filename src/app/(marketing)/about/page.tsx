@@ -8,6 +8,7 @@ import {
   Rocket,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { RevealSection } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
   title: "About — DevPath Academy",
@@ -53,7 +54,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-white dark:bg-slate-950 py-20 border-b border-slate-200 dark:border-slate-800">
+      <RevealSection className="bg-white dark:bg-slate-950 py-20 border-b border-slate-200 dark:border-slate-800">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
             About DevPath Academy
@@ -65,10 +66,10 @@ export default function AboutPage() {
             community.
           </p>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Stats */}
-      <section className="bg-slate-50 dark:bg-slate-900 py-16">
+      <RevealSection className="bg-slate-50 dark:bg-slate-900 py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
             {stats.map(({ label, value, icon: Icon }) => (
@@ -89,10 +90,10 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Our Mission */}
-      <section className="bg-white dark:bg-slate-950 py-20">
+      <RevealSection className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
             Our Mission
@@ -103,10 +104,10 @@ export default function AboutPage() {
             regardless of their background, location, or prior experience.
           </p>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Values */}
-      <section className="bg-slate-50 dark:bg-slate-900 py-20">
+      <RevealSection className="bg-slate-50 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
             What We Stand For
@@ -131,7 +132,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </RevealSection>
     </div>
   );
 }

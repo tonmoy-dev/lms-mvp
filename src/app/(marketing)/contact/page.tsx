@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactClient } from "@/components/sections/contact-client";
+import { RevealSection } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
   title: "Contact Us — DevPath Academy",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-      <div className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 py-12">
+      <RevealSection className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 py-12">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Contact Us
@@ -19,7 +20,7 @@ export default function ContactPage() {
             hear from you.
           </p>
         </div>
-      </div>
+      </RevealSection>
       <ContactClient />
     </div>
   );
