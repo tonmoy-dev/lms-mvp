@@ -1,23 +1,23 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import {
-  CreditCard,
-  Lock,
-  CheckCircle2,
-  ChevronLeft,
-  Calendar,
-  Users,
-  Shield,
-  Zap,
-  Award,
-  Loader2,
-} from "lucide-react";
-import { Course, Batch } from "@/data/courses";
+import { Batch, Course } from "@/data/courses";
 import { courseIconComponents } from "@/lib/course-utils";
 import { cn } from "@/lib/utils";
+import {
+  Award,
+  Calendar,
+  CheckCircle2,
+  ChevronLeft,
+  CreditCard,
+  Loader2,
+  Lock,
+  Shield,
+  Users,
+  Zap,
+} from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { toast } from "sonner";
 
 interface Props {
@@ -45,7 +45,8 @@ export function EnrollmentClient({ course }: Props) {
   });
   const [cardErrors, setCardErrors] = useState<Record<string, string>>({});
 
-  const IconComp = courseIconComponents[course.iconName as keyof typeof courseIconComponents];
+  const IconComp =
+    courseIconComponents[course.iconName as keyof typeof courseIconComponents];
 
   const savings = selectedBatch.originalPrice
     ? selectedBatch.originalPrice - selectedBatch.price
@@ -68,10 +69,13 @@ export function EnrollmentClient({ course }: Props) {
   function validateCard() {
     const errors: Record<string, string> = {};
     const rawNumber = cardData.number.replace(/\s/g, "");
-    if (!rawNumber || rawNumber.length < 16) errors.number = "Enter a valid 16-digit card number.";
+    if (!rawNumber || rawNumber.length < 16)
+      errors.number = "Enter a valid 16-digit card number.";
     if (!cardData.name.trim()) errors.name = "Cardholder name is required.";
-    if (!cardData.expiry || cardData.expiry.length < 5) errors.expiry = "Enter a valid expiry date (MM/YY).";
-    if (!cardData.cvv || cardData.cvv.length < 3) errors.cvv = "Enter a valid CVV.";
+    if (!cardData.expiry || cardData.expiry.length < 5)
+      errors.expiry = "Enter a valid expiry date (MM/YY).";
+    if (!cardData.cvv || cardData.cvv.length < 3)
+      errors.cvv = "Enter a valid CVV.";
     return errors;
   }
 
@@ -170,7 +174,7 @@ export function EnrollmentClient({ course }: Props) {
                           isSelected
                             ? "border-emerald-600 bg-emerald-50 dark:bg-emerald-900/20"
                             : "border-border bg-white dark:bg-slate-900 hover:border-emerald-200 dark:hover:border-emerald-800",
-                          isFull && "opacity-50 cursor-not-allowed"
+                          isFull && "opacity-50 cursor-not-allowed",
                         )}
                       >
                         <div className="flex items-start justify-between gap-3">
@@ -180,7 +184,7 @@ export function EnrollmentClient({ course }: Props) {
                                 "mt-0.5 h-4 w-4 rounded-full border-2 flex items-center justify-center shrink-0",
                                 isSelected
                                   ? "border-emerald-600 bg-emerald-600"
-                                  : "border-slate-300 dark:border-slate-600"
+                                  : "border-slate-300 dark:border-slate-600",
                               )}
                             >
                               {isSelected && (
@@ -194,11 +198,14 @@ export function EnrollmentClient({ course }: Props) {
                               <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1.5 text-xs text-slate-500">
                                 <span className="flex items-center gap-1">
                                   <Calendar className="h-3.5 w-3.5" />
-                                  {formatDate(batch.startDate)} — {formatDate(batch.endDate)}
+                                  {formatDate(batch.startDate)} —{" "}
+                                  {formatDate(batch.endDate)}
                                 </span>
                                 <span className="flex items-center gap-1">
                                   <Users className="h-3.5 w-3.5" />
-                                  {isFull ? "Sold out" : `${batch.seatsLeft} seats left`}
+                                  {isFull
+                                    ? "Sold out"
+                                    : `${batch.seatsLeft} seats left`}
                                 </span>
                               </div>
                             </div>
@@ -240,18 +247,25 @@ export function EnrollmentClient({ course }: Props) {
                         placeholder="1234 5678 9012 3456"
                         value={cardData.number}
                         onChange={(e) => {
-                          setCardData((p) => ({ ...p, number: formatCardNumber(e.target.value) }));
+                          setCardData((p) => ({
+                            ...p,
+                            number: formatCardNumber(e.target.value),
+                          }));
                           setCardErrors((p) => ({ ...p, number: "" }));
                         }}
                         className={cn(
                           "w-full rounded-lg border px-3 py-2.5 pr-10 text-sm bg-background text-slate-900 dark:text-white placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-emerald-500/30 transition",
-                          cardErrors.number ? "border-red-400" : "border-border"
+                          cardErrors.number
+                            ? "border-red-400"
+                            : "border-border",
                         )}
                       />
                       <CreditCard className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                     </div>
                     {cardErrors.number && (
-                      <p className="text-xs text-red-500">{cardErrors.number}</p>
+                      <p className="text-xs text-red-500">
+                        {cardErrors.number}
+                      </p>
                     )}
                   </div>
 
@@ -269,7 +283,7 @@ export function EnrollmentClient({ course }: Props) {
                       }}
                       className={cn(
                         "w-full rounded-lg border px-3 py-2.5 text-sm bg-background text-slate-900 dark:text-white placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-emerald-500/30 transition",
-                        cardErrors.name ? "border-red-400" : "border-border"
+                        cardErrors.name ? "border-red-400" : "border-border",
                       )}
                     />
                     {cardErrors.name && (
@@ -287,16 +301,23 @@ export function EnrollmentClient({ course }: Props) {
                         placeholder="MM/YY"
                         value={cardData.expiry}
                         onChange={(e) => {
-                          setCardData((p) => ({ ...p, expiry: formatExpiry(e.target.value) }));
+                          setCardData((p) => ({
+                            ...p,
+                            expiry: formatExpiry(e.target.value),
+                          }));
                           setCardErrors((p) => ({ ...p, expiry: "" }));
                         }}
                         className={cn(
                           "w-full rounded-lg border px-3 py-2.5 text-sm bg-background text-slate-900 dark:text-white placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-emerald-500/30 transition",
-                          cardErrors.expiry ? "border-red-400" : "border-border"
+                          cardErrors.expiry
+                            ? "border-red-400"
+                            : "border-border",
                         )}
                       />
                       {cardErrors.expiry && (
-                        <p className="text-xs text-red-500">{cardErrors.expiry}</p>
+                        <p className="text-xs text-red-500">
+                          {cardErrors.expiry}
+                        </p>
                       )}
                     </div>
                     <div className="space-y-1">
@@ -308,12 +329,15 @@ export function EnrollmentClient({ course }: Props) {
                         placeholder="123"
                         value={cardData.cvv}
                         onChange={(e) => {
-                          setCardData((p) => ({ ...p, cvv: e.target.value.replace(/\D/g, "").slice(0, 4) }));
+                          setCardData((p) => ({
+                            ...p,
+                            cvv: e.target.value.replace(/\D/g, "").slice(0, 4),
+                          }));
                           setCardErrors((p) => ({ ...p, cvv: "" }));
                         }}
                         className={cn(
                           "w-full rounded-lg border px-3 py-2.5 text-sm bg-background text-slate-900 dark:text-white placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-emerald-500/30 transition",
-                          cardErrors.cvv ? "border-red-400" : "border-border"
+                          cardErrors.cvv ? "border-red-400" : "border-border",
                         )}
                       />
                       {cardErrors.cvv && (
@@ -338,7 +362,8 @@ export function EnrollmentClient({ course }: Props) {
                   </button>
                   <button
                     type="submit"
-                    disabled={isProcessing}
+                    // disabled={isProcessing}
+                    disabled
                     className="flex-1 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-70 py-3 text-sm font-bold text-white transition-colors flex items-center justify-center gap-2"
                   >
                     {isProcessing ? (
@@ -369,7 +394,9 @@ export function EnrollmentClient({ course }: Props) {
                   className="rounded-lg border border-border bg-white dark:bg-slate-900 p-3 text-center"
                 >
                   <Icon className="h-5 w-5 text-emerald-500 mx-auto mb-1" />
-                  <p className="text-xs font-semibold text-slate-700 dark:text-slate-300">{label}</p>
+                  <p className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    {label}
+                  </p>
                   <p className="text-[10px] text-slate-500">{sub}</p>
                 </div>
               ))}
@@ -384,7 +411,7 @@ export function EnrollmentClient({ course }: Props) {
                 className={cn(
                   "h-24 flex items-center justify-center bg-linear-to-br",
                   course.gradientFrom,
-                  course.gradientTo
+                  course.gradientTo,
                 )}
               >
                 {IconComp && <IconComp className="h-10 w-10 text-white/80" />}
@@ -394,7 +421,9 @@ export function EnrollmentClient({ course }: Props) {
                   <h3 className="font-bold text-slate-900 dark:text-white text-sm leading-tight">
                     {course.title}
                   </h3>
-                  <p className="text-xs text-slate-500 mt-1">by {course.instructor.name}</p>
+                  <p className="text-xs text-slate-500 mt-1">
+                    by {course.instructor.name}
+                  </p>
                 </div>
 
                 <div className="space-y-2 text-sm">
@@ -420,14 +449,20 @@ export function EnrollmentClient({ course }: Props) {
                   )}
                   {savings > 0 && (
                     <div className="flex justify-between">
-                      <span className="text-emerald-600 text-xs font-semibold">You save</span>
-                      <span className="text-emerald-600 font-semibold text-xs">-${savings}</span>
+                      <span className="text-emerald-600 text-xs font-semibold">
+                        You save
+                      </span>
+                      <span className="text-emerald-600 font-semibold text-xs">
+                        -${savings}
+                      </span>
                     </div>
                   )}
                 </div>
 
                 <div className="border-t border-border pt-3 flex justify-between items-center">
-                  <span className="font-bold text-slate-900 dark:text-white">Total</span>
+                  <span className="font-bold text-slate-900 dark:text-white">
+                    Total
+                  </span>
                   <span className="text-xl font-bold text-slate-900 dark:text-white">
                     ${selectedBatch.price}
                   </span>
