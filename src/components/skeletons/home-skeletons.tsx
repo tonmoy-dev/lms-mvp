@@ -206,22 +206,22 @@ export function InstructorCtaSkeleton() {
 
 export function FinalCtaSkeleton() {
   return (
-    <section className="relative overflow-hidden py-24 bg-indigo-700">
+    <section className="relative overflow-hidden py-24 bg-emerald-700">
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-4">
           {/* Heading */}
-          <Pulse className="h-10 w-3/4 bg-indigo-500" />
-          <Pulse className="h-10 w-1/2 bg-indigo-500" />
+          <Pulse className="h-10 w-3/4 bg-emerald-500" />
+          <Pulse className="h-10 w-1/2 bg-emerald-500" />
           {/* Subtext */}
-          <Pulse className="mt-1 h-4 w-2/3 bg-indigo-500" />
-          <Pulse className="h-4 w-1/2 bg-indigo-500" />
+          <Pulse className="mt-1 h-4 w-2/3 bg-emerald-500" />
+          <Pulse className="h-4 w-1/2 bg-emerald-500" />
           {/* Buttons */}
           <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row">
-            <Pulse className="h-11 w-40 rounded-lg bg-indigo-500" />
-            <Pulse className="h-11 w-36 rounded-lg bg-indigo-500" />
+            <Pulse className="h-11 w-40 rounded-lg bg-emerald-500" />
+            <Pulse className="h-11 w-36 rounded-lg bg-emerald-500" />
           </div>
           {/* Fine print */}
-          <Pulse className="h-3 w-40 bg-indigo-500" />
+          <Pulse className="h-3 w-40 bg-emerald-500" />
         </div>
       </div>
     </section>

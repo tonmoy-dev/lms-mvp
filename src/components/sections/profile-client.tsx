@@ -18,6 +18,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { courseIconMap } from "@/lib/course-utils";
 import type { UserProfile, EnrolledCourse } from "@/data/user";
+import { useAuth } from "@/components/providers/auth-provider";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 function StatCard({
   icon: Icon,
@@ -76,7 +79,7 @@ function EnrolledCourseCard({ course }: { course: EnrolledCourse }) {
 
         <CardContent className="flex flex-1 flex-col justify-between gap-3 p-4">
           <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-1">
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-1">
               {course.title}
             </h3>
             <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
@@ -102,7 +105,7 @@ function EnrolledCourseCard({ course }: { course: EnrolledCourse }) {
               <div
                 className={cn(
                   "h-full rounded-full transition-all",
-                  isComplete ? "bg-emerald-500" : "bg-indigo-500"
+                  isComplete ? "bg-emerald-500" : "bg-emerald-500"
                 )}
                 style={{ width: `${course.progress}%` }}
               />
@@ -116,7 +119,7 @@ function EnrolledCourseCard({ course }: { course: EnrolledCourse }) {
               "w-fit gap-1.5",
               isComplete
                 ? "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700"
-                : "bg-indigo-600 text-white hover:bg-indigo-700"
+                : "bg-emerald-600 text-white hover:bg-emerald-700"
             )}
           >
             {isComplete ? "Review Course" : "Continue Learning"}
@@ -128,8 +131,22 @@ function EnrolledCourseCard({ course }: { course: EnrolledCourse }) {
   );
 }
 
-export function ProfileClient({ user }: { user: UserProfile }) {
-  const joinDate = new Date(user.joinedDate).toLocaleDateString("en-US", {
+export function ProfileClient({ user: mockData }: { user: UserProfile }) {
+  const { user: authUser } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!authUser) {
+      router.push("/signin");
+    }
+  }, [authUser, router]);
+
+  if (!authUser) return null;
+
+  // Merge mock data with authenticated user data
+  const user = { ...mockData, ...authUser };
+
+  const joinDate = new Date(user.joinedDate || new Date()).toLocaleDateString("en-US", {
     month: "long",
     year: "numeric",
   });
@@ -141,7 +158,7 @@ export function ProfileClient({ user }: { user: UserProfile }) {
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
       {/* Profile header */}
       <Card className="overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
-        <div className="h-32 bg-linear-to-r from-indigo-500 via-violet-500 to-purple-500" />
+        <div className="h-32 bg-linear-to-r from-emerald-500 via-teal-500 to-purple-500" />
         <CardContent className="relative px-6 pb-6">
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end">
             <Avatar className="-mt-12 h-24 w-24 border-4 border-white dark:border-slate-900 shadow-lg">
@@ -185,8 +202,8 @@ export function ProfileClient({ user }: { user: UserProfile }) {
           icon={BookOpen}
           label="Enrolled Courses"
           value={user.enrolledCourses.length}
-          iconBg="bg-indigo-100"
-          iconColor="text-indigo-600"
+          iconBg="bg-emerald-100"
+          iconColor="text-emerald-600"
         />
         <StatCard
           icon={Award}
@@ -199,8 +216,8 @@ export function ProfileClient({ user }: { user: UserProfile }) {
           icon={Clock}
           label="Learning Hours"
           value={user.totalLearningHours}
-          iconBg="bg-violet-100"
-          iconColor="text-violet-600"
+          iconBg="bg-teal-100"
+          iconColor="text-teal-600"
         />
       </div>
 
@@ -246,7 +263,7 @@ export function ProfileClient({ user }: { user: UserProfile }) {
             href="/courses"
             className={cn(
               buttonVariants(),
-              "mt-4 bg-indigo-600 text-white hover:bg-indigo-700"
+              "mt-4 bg-emerald-600 text-white hover:bg-emerald-700"
             )}
           >
             Browse Courses

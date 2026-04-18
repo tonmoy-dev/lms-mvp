@@ -44,14 +44,14 @@ export function AnnouncementBar() {
   const nextDate = getNextBatchDate();
 
   return (
-    <div className="relative bg-indigo-600 px-4 py-2.5 text-center text-sm text-white">
+    <div className="relative bg-emerald-600 px-4 py-2.5 text-center text-sm text-white">
       <p className="font-medium">
         {nextDate
           ? `New cohort starting ${nextDate} — seats filling fast. `
           : "New cohorts opening soon — don\u2019t miss out. "}
         <Link
           href="/courses"
-          className="underline underline-offset-2 font-semibold hover:text-indigo-100 transition-colors"
+          className="underline underline-offset-2 font-semibold hover:text-emerald-100 transition-colors"
         >
           Enroll Now &rarr;
         </Link>
@@ -59,7 +59,7 @@ export function AnnouncementBar() {
       <button
         onClick={dismiss}
         aria-label="Dismiss announcement"
-        className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-0.5 hover:bg-indigo-500 transition-colors"
+        className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-0.5 hover:bg-emerald-500 transition-colors"
       >
         <X className="h-4 w-4" />
       </button>

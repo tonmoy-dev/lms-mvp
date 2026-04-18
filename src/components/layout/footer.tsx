@@ -15,17 +15,16 @@ const quickLinks = [
 ];
 
 const categories = [
-  { label: "Web Development", href: "/courses?category=Web+Development" },
-  { label: "Data Science", href: "/courses?category=Data+Science" },
-  { label: "Machine Learning & AI", href: "/courses?category=AI+%26+Machine+Learning" },
-  { label: "Cloud & DevOps", href: "/courses?category=Cloud+%26+DevOps" },
-  { label: "Cybersecurity", href: "/courses?category=Cybersecurity" },
+  { label: "ISSB Preparation", href: "/courses" },
+  { label: "Preliminary", href: "/courses" },
+  { label: "Written Test", href: "/courses" },
+  { label: "Screening Test", href: "/courses" },
 ];
 
 const support = [
   { label: "Help Center", href: "/contact" },
   { label: "Student Guide", href: "/about" },
-  { label: "Teach with DevPath", href: "/contact" },
+  { label: "Teach with Defense Academy", href: "/contact" },
 ];
 
 const legal = [
@@ -83,16 +82,15 @@ export function Footer() {
           {/* Brand + Newsletter col (spans 2) */}
           <div className="lg:col-span-2">
             <Link href="/" className="mb-4 flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600">
                 <Code2 className="h-4 w-4 text-white" />
               </div>
               <span className="text-lg font-bold text-white">
-                DevPath<span className="text-indigo-400"> Academy</span>
+                Defense<span className="text-emerald-400"> Academy</span>
               </span>
             </Link>
             <p className="mb-6 text-sm leading-relaxed text-slate-400">
-              Empowering tech professionals worldwide through industry-relevant,
-              project-based education.
+              Empowering candidates worldwide to achieve their dreams of joining the Bangladesh Armed Forces through rigorous, expert-led preparation.
             </p>
 
             <h4 className="mb-2 text-sm font-semibold text-slate-200">
@@ -102,7 +100,7 @@ export function Footer() {
               No spam. Only course launches, cohort openings, and dev tips.
             </p>
             {subscribed ? (
-              <p className="text-sm font-medium text-indigo-400">
+              <p className="text-sm font-medium text-emerald-400">
                 You&apos;re subscribed!
               </p>
             ) : (
@@ -113,12 +111,12 @@ export function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="border-slate-700 bg-slate-800 text-slate-200 placeholder-slate-500 focus-visible:ring-indigo-500"
+                  className="border-slate-700 bg-slate-800 text-slate-200 placeholder-slate-500 focus-visible:ring-emerald-500"
                 />
                 <Button
                   type="submit"
                   size="icon"
-                  className="shrink-0 bg-indigo-600 hover:bg-indigo-500"
+                  className="shrink-0 bg-emerald-600 hover:bg-emerald-500"
                   aria-label="Subscribe"
                 >
                   <ArrowRight className="h-4 w-4" />
@@ -137,7 +135,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} DevPath Academy. All rights reserved.
+            &copy; {new Date().getFullYear()} Defense Academy. All rights reserved.
           </p>
           <p className="text-xs text-slate-600">
             Built with Next.js &middot; Tailwind CSS &middot; shadcn/ui

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
   const course = getCourseBySlug(slug);
   if (!course) return {};
   return {
-    title: `${course.title} — DevPath Academy`,
+    title: `${course.title} — Defense Academy`,
     description: course.subtitle,
   };
 }

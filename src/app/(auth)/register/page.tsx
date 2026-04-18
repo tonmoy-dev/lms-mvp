@@ -1,15 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { useAuth } from "@/components/providers/auth-provider";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { GoogleIcon } from "@/components/ui/google-icon";
-import { useAuth } from "@/components/providers/auth-provider";
+import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { Eye, EyeOff, Loader2 } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 type InputMode = "email" | "phone";
 
@@ -91,7 +90,11 @@ export default function RegisterPage() {
     }
     setIsLoading(true);
     await new Promise((r) => setTimeout(r, 800));
-    await register(formData.fullName, formData.email || formData.phone, formData.password);
+    await register(
+      formData.fullName,
+      formData.email || formData.phone,
+      formData.password,
+    );
     setIsLoading(false);
     router.push("/dashboard");
   }
@@ -113,26 +116,6 @@ export default function RegisterPage() {
         <p className="mt-1.5 text-sm text-slate-500 dark:text-slate-400">
           Enter your details below to create your account
         </p>
-      </div>
-
-      <button
-        type="button"
-        onClick={handleGoogleSignIn}
-        disabled={isGoogleLoading || isLoading}
-        className="flex w-full items-center justify-center gap-2.5 rounded-lg border border-border bg-background py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
-      >
-        {isGoogleLoading ? (
-          <Loader2 className="h-4 w-4 animate-spin" />
-        ) : (
-          <GoogleIcon />
-        )}
-        Continue with Google
-      </button>
-
-      <div className="my-5 flex items-center gap-3">
-        <div className="h-px flex-1 bg-border" />
-        <span className="text-xs text-muted-foreground">or</span>
-        <div className="h-px flex-1 bg-border" />
       </div>
 
       <form onSubmit={handleSubmit} noValidate className="space-y-4">
@@ -169,8 +152,8 @@ export default function RegisterPage() {
             className={cn(
               "flex-1 rounded-md py-1.5 text-sm font-medium transition-colors",
               inputMode === "email"
-                ? "bg-slate-900 text-white shadow-sm dark:bg-indigo-600"
-                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+                ? "bg-slate-900 text-white shadow-sm dark:bg-emerald-600"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200",
             )}
           >
             Email
@@ -181,8 +164,8 @@ export default function RegisterPage() {
             className={cn(
               "flex-1 rounded-md py-1.5 text-sm font-medium transition-colors",
               inputMode === "phone"
-                ? "bg-slate-900 text-white shadow-sm dark:bg-indigo-600"
-                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+                ? "bg-slate-900 text-white shadow-sm dark:bg-emerald-600"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200",
             )}
           >
             Phone
@@ -315,22 +298,21 @@ export default function RegisterPage() {
             checked={agreedToTerms}
             onChange={(e) => {
               setAgreedToTerms(e.target.checked);
-              if (errors.terms)
-                setErrors((prev) => ({ ...prev, terms: "" }));
+              if (errors.terms) setErrors((prev) => ({ ...prev, terms: "" }));
             }}
             label={
               <>
                 I agree to the{" "}
                 <Link
                   href="/terms"
-                  className="font-medium text-slate-900 dark:text-slate-100 underline underline-offset-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                  className="font-medium text-slate-900 dark:text-slate-100 underline underline-offset-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 >
                   Terms of Service
                 </Link>{" "}
                 and{" "}
                 <Link
                   href="/privacy"
-                  className="font-medium text-slate-900 dark:text-slate-100 underline underline-offset-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                  className="font-medium text-slate-900 dark:text-slate-100 underline underline-offset-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 >
                   Privacy Policy
                 </Link>
@@ -344,7 +326,8 @@ export default function RegisterPage() {
 
         <Button
           type="submit"
-          disabled={isLoading || isGoogleLoading}
+          // disabled={isLoading || isGoogleLoading}
+          disabled
           className="w-full h-11 bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold disabled:opacity-50"
         >
           {isLoading ? (
@@ -359,7 +342,7 @@ export default function RegisterPage() {
         Already have an account?{" "}
         <Link
           href="/signin"
-          className="font-semibold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          className="font-semibold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
         >
           Sign in
         </Link>

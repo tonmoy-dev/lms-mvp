@@ -11,7 +11,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RevealSection } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
-  title: "About — DevPath Academy",
+  title: "About — Defense Academy",
   description:
     "Learn about our mission, team, and commitment to high-quality tech education.",
 };
@@ -57,13 +57,11 @@ export default function AboutPage() {
       <RevealSection className="bg-white dark:bg-slate-950 py-20 border-b border-slate-200 dark:border-slate-800">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-            About DevPath Academy
+            About Defense Academy
           </h1>
           <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-400">
-            We believe the best way to learn tech is by building. DevPath
-            Academy connects ambitious learners with industry practitioners
-            through project-based courses, live cohorts, and a supportive global
-            community.
+            Defense Academy (PFDA) is a premier institution in Bangladesh dedicated to preparing candidates for officer-level positions in the Bangladesh Army, Navy, and Air Force.
+            Founded by M Asif Rahman — an ex-Officer Cadet of the Bangladesh Air Force and author of the SNIPER Series.
           </p>
         </div>
       </RevealSection>
@@ -78,7 +76,7 @@ export default function AboutPage() {
                 className="border border-slate-200 dark:border-slate-700 text-center"
               >
                 <CardContent className="flex flex-col items-center gap-2 p-6">
-                  <Icon className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                  <Icon className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
                   <span className="text-3xl font-extrabold text-slate-900 dark:text-white">
                     {value}
                   </span>
@@ -99,9 +97,8 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-400">
-            To democratize tech education by providing world-class, hands-on
-            learning experiences that prepare people for real careers &mdash;
-            regardless of their background, location, or prior experience.
+            সেনা, নৌ ও বিমান বাহিনীর অফিসার হওয়ার স্বপ্ন পূরণে দৃঢ়তার সাথে আপনার পাশে। 
+            We are committed to building the next generation of patriots and professionals through military discipline, values, and dedication.
           </p>
         </div>
       </RevealSection>
@@ -116,8 +113,8 @@ export default function AboutPage() {
             {values.map(({ icon: Icon, title, description }) => (
               <Card key={title} className="border border-slate-200 dark:border-slate-700">
                 <CardContent className="flex gap-4 p-6">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/40">
-                    <Icon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 dark:bg-emerald-900/40">
+                    <Icon className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                   </div>
                   <div>
                     <h3 className="text-base font-semibold text-slate-900 dark:text-white">

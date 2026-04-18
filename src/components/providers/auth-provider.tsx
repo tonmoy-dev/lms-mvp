@@ -1,32 +1,30 @@
 "use client";
 
 import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useCallback,
-} from "react";
-import { useRouter } from "next/navigation";
-import {
-  getSession,
+  registerUser as authRegister,
   signIn as authSignIn,
   signOut as authSignOut,
-  registerUser as authRegister,
+  getSession,
   SessionUser,
 } from "@/lib/auth";
+import { useRouter } from "next/navigation";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useState,
+} from "react";
 
 interface AuthContextValue {
   user: SessionUser | null;
-  isLoading: boolean;
   signIn: (
     email: string,
-    password: string
+    password: string,
   ) => Promise<{ success: boolean; error?: string }>;
   register: (
     name: string,
     email: string,
-    password: string
+    password: string,
   ) => Promise<{ success: boolean; error?: string }>;
   signOut: () => void;
 }
@@ -34,22 +32,15 @@ interface AuthContextValue {
 const AuthContext = createContext<AuthContextValue | null>(null);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<SessionUser | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState<SessionUser | null>(getSession);
   const router = useRouter();
-
-  useEffect(() => {
-    setUser(getSession());
-    setIsLoading(false);
-  }, []);
 
   const signIn = useCallback(async (email: string, password: string) => {
     const session = authSignIn(email, password);
     if (!session) {
       return {
         success: false,
-        error:
-          "Invalid email or password. Try alex@devpath.com / password123",
+        error: "Invalid email or password",
       };
     }
     setUser(session);
@@ -62,7 +53,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setUser(session);
       return { success: true };
     },
-    []
+    [],
   );
 
   const handleSignOut = useCallback(() => {
@@ -73,7 +64,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, isLoading, signIn, register, signOut: handleSignOut }}
+      value={{ user, signIn, register, signOut: handleSignOut }}
     >
       {children}
     </AuthContext.Provider>

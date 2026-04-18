@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   Code2,
   LayoutDashboard,
@@ -33,9 +33,18 @@ const instructorNav = [
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { user, signOut } = useAuth();
   const pathname = usePathname();
+  const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  useEffect(() => {
+    if (!user) {
+      router.push("/signin");
+    }
+  }, [user, router]);
+
   const navItems = user?.role === "instructor" ? instructorNav : studentNav;
+
+  if (!user) return null;
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex">
@@ -57,11 +66,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         {/* Sidebar header */}
         <div className="flex h-16 items-center justify-between px-4 border-b border-border">
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600">
               <Code2 className="h-4 w-4 text-white" />
             </div>
             <span className="text-base font-bold text-slate-900 dark:text-white">
-              DevPath<span className="text-indigo-600"> Academy</span>
+              Defense Academy<span className="text-emerald-600"> Academy</span>
             </span>
           </Link>
           <button
@@ -89,7 +98,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                   {user.name}
                 </p>
                 <p className="text-xs text-slate-500 truncate">{user.email}</p>
-                <span className="mt-0.5 inline-block rounded-full bg-indigo-50 dark:bg-indigo-900/30 px-2 py-0.5 text-[10px] font-semibold text-indigo-600 dark:text-indigo-400 capitalize">
+                <span className="mt-0.5 inline-block rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 capitalize">
                   {user.role}
                 </span>
               </div>
@@ -109,7 +118,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 className={cn(
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
                   active
-                    ? "bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400"
+                    ? "bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
                     : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
                 )}
               >
@@ -144,11 +153,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <Menu className="h-5 w-5" />
           </button>
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-600">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600">
               <Code2 className="h-3.5 w-3.5 text-white" />
             </div>
             <span className="text-sm font-bold text-slate-900 dark:text-white">
-              DevPath<span className="text-indigo-500"> Academy</span>
+              Defense Academy<span className="text-emerald-500"> Academy</span>
             </span>
           </Link>
         </header>

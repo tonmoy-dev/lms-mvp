@@ -13,7 +13,7 @@ function formatDate(dateStr: string) {
 }
 
 export const metadata = {
-  title: "Blog — DevPath Academy",
+  title: "Blog — Defense Academy",
   description: "Expert insights on web development, AI, data science, and cloud engineering.",
 };
 
@@ -26,12 +26,12 @@ export default function BlogPage() {
       {/* Hero */}
       <RevealSection className="border-b border-border bg-slate-50 dark:bg-slate-900 py-14 sm:py-20 px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-900/20 px-3 py-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400 mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-900/20 px-3 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 mb-4">
             <BookOpen className="h-3.5 w-3.5" />
-            The DevPath Blog
+            The Defense Academy Blog
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
-            Expert Insights & <span className="text-indigo-600 dark:text-indigo-400">Learning Guides</span>
+            Expert Insights & <span className="text-emerald-600 dark:text-emerald-400">Learning Guides</span>
           </h1>
           <p className="mt-4 text-base text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
             In-depth articles from our instructors — covering web development, AI, data science,
@@ -45,7 +45,7 @@ export default function BlogPage() {
         {featured.length > 0 && (
           <RevealSection className="mb-16">
             <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-              <span className="inline-block h-3 w-3 rounded-full bg-indigo-500" />
+              <span className="inline-block h-3 w-3 rounded-full bg-emerald-500" />
               Featured Articles
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
@@ -67,7 +67,7 @@ export default function BlogPage() {
                     </span>
                   </div>
                   <div className="flex flex-col flex-1 p-5">
-                    <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2 mb-2">
+                    <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 mb-2">
                       {post.title}
                     </h3>
                     <p className="text-sm text-slate-500 line-clamp-2 flex-1 mb-4">
@@ -99,7 +99,7 @@ export default function BlogPage() {
                           </div>
                         </div>
                       </div>
-                      <ArrowRight className="h-4 w-4 text-indigo-500 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-4 w-4 text-emerald-500 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </Link>
@@ -144,7 +144,7 @@ export default function BlogPage() {
                       {post.readTime}
                     </span>
                   </div>
-                  <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2 mb-2 flex-1">
+                  <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 mb-2 flex-1">
                     {post.title}
                   </h3>
                   <p className="text-xs text-slate-500 line-clamp-2 mb-4">{post.excerpt}</p>

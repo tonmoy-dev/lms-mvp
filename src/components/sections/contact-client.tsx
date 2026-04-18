@@ -12,21 +12,21 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@devpath.academy",
-    iconBg: "bg-indigo-100 dark:bg-indigo-900/40",
-    iconColor: "text-indigo-600 dark:text-indigo-400",
+    value: "admn.pfda@gmail.com",
+    iconBg: "bg-emerald-100 dark:bg-emerald-900/40",
+    iconColor: "text-emerald-600 dark:text-emerald-400",
   },
   {
     icon: MapPin,
-    label: "Location",
-    value: "Remote-first, worldwide",
-    iconBg: "bg-violet-100 dark:bg-violet-900/40",
-    iconColor: "text-violet-600 dark:text-violet-400",
+    label: "Locations",
+    value: "Kochukhet (Dhaka Cantonment) & Farmgate",
+    iconBg: "bg-teal-100 dark:bg-teal-900/40",
+    iconColor: "text-teal-600 dark:text-teal-400",
   },
   {
     icon: Clock,
-    label: "Response Time",
-    value: "Within 24 hours",
+    label: "Hotline",
+    value: "01709-949972 / 01766-773200",
     iconBg: "bg-emerald-100 dark:bg-emerald-900/40",
     iconColor: "text-emerald-600 dark:text-emerald-400",
   },
@@ -152,7 +152,7 @@ export function ContactClient() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full h-11 bg-indigo-600 text-white hover:bg-indigo-700 text-sm font-semibold"
+                  className="w-full h-11 bg-emerald-600 text-white hover:bg-emerald-700 text-sm font-semibold"
                 >
                   {isLoading ? (
                     <Loader2 className="h-4 w-4 animate-spin" />

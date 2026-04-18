@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { RevealBlock } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — DevPath Academy",
-  description: "How DevPath Academy collects, uses, and protects your data.",
+  title: "Privacy Policy — Defense Academy",
+  description: "How Defense Academy collects, uses, and protects your data.",
 };
 
 export default function PrivacyPage() {

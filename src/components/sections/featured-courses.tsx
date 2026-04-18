@@ -3,61 +3,61 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { homeGridContainerVariants, homeGridItemVariants } from "@/lib/page-motion";
-import { ArrowRight, Globe, Brain, BarChart2, Layers } from "lucide-react";
+import { ArrowRight, Shield, Globe, Video, FileText } from "lucide-react";
 import { CourseCard, CourseCardProps } from "@/components/ui/course-card";
 
 const courses: CourseCardProps[] = [
   {
-    title: "Full-Stack Web Development Bootcamp",
-    instructor: "Alex Rivera",
+    title: "Regular Offline ISSB Course",
+    instructor: "M Asif Rahman",
     instructorInitials: "AR",
-    type: "Bootcamp",
-    lessonCount: 48,
-    studentCount: 3124,
-    price: "$199",
-    slug: "fullstack-web-dev",
-    gradientFrom: "from-indigo-500",
-    gradientTo: "to-violet-600",
+    type: "Offline",
+    lessonCount: 40,
+    studentCount: 1520,
+    price: "৳8000",
+    slug: "regular-offline-issb",
+    gradientFrom: "from-emerald-500",
+    gradientTo: "to-teal-600",
+    icon: <Shield className="h-8 w-8" />,
+  },
+  {
+    title: "Regular Online ISSB Course",
+    instructor: "M Asif Rahman",
+    instructorInitials: "AR",
+    type: "Live",
+    lessonCount: 35,
+    studentCount: 890,
+    price: "৳8000",
+    slug: "regular-online-issb",
+    gradientFrom: "from-sky-400",
+    gradientTo: "to-blue-600",
     icon: <Globe className="h-8 w-8" />,
   },
   {
-    title: "Machine Learning & AI Fundamentals",
-    instructor: "Dr. Sarah Lin",
-    instructorInitials: "SL",
-    type: "Live",
-    lessonCount: 32,
-    studentCount: 1890,
-    price: "$249",
-    slug: "ml-ai-fundamentals",
-    gradientFrom: "from-violet-500",
-    gradientTo: "to-pink-500",
-    icon: <Brain className="h-8 w-8" />,
-  },
-  {
-    title: "Data Science & Analytics with Python",
-    instructor: "James Okafor",
-    instructorInitials: "JO",
-    type: "Hybrid",
-    lessonCount: 28,
-    studentCount: 975,
-    price: "$179",
-    slug: "data-science-python",
-    gradientFrom: "from-emerald-400",
-    gradientTo: "to-cyan-500",
-    icon: <BarChart2 className="h-8 w-8" />,
-  },
-  {
-    title: "React & Next.js — Modern Frontend Mastery",
-    instructor: "Priya Nair",
-    instructorInitials: "PN",
+    title: "OC Asif's Special Recorded Course",
+    instructor: "M Asif Rahman",
+    instructorInitials: "AR",
     type: "Self-paced",
-    lessonCount: 22,
-    studentCount: 2450,
-    price: "$149",
-    slug: "react-nextjs-mastery",
+    lessonCount: 20,
+    studentCount: 3100,
+    price: "৳4080",
+    slug: "oc-asif-special-recorded",
     gradientFrom: "from-amber-400",
     gradientTo: "to-orange-500",
-    icon: <Layers className="h-8 w-8" />,
+    icon: <Video className="h-8 w-8" />,
+  },
+  {
+    title: "ISSB Screening Test Mock",
+    instructor: "PFDA Team",
+    instructorInitials: "PT",
+    type: "Test",
+    lessonCount: 1,
+    studentCount: 450,
+    price: "৳1000",
+    slug: "issb-screening-test",
+    gradientFrom: "from-rose-400",
+    gradientTo: "to-red-600",
+    icon: <FileText className="h-8 w-8" />,
   },
 ];
 
@@ -94,7 +94,7 @@ export function FeaturedCourses() {
         <div className="mt-10 text-center">
           <Link
             href="/courses"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600 hover:text-emerald-800 transition-colors"
           >
             View All Courses <ArrowRight className="h-4 w-4" />
           </Link>

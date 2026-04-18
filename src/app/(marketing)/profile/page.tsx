@@ -3,7 +3,7 @@ import { ProfileClient } from "@/components/sections/profile-client";
 import { mockUser } from "@/data/user";
 
 export const metadata: Metadata = {
-  title: "My Profile — DevPath Academy",
+  title: "My Profile — Defense Academy",
   description: "View your learning progress and enrolled courses.",
 };
 

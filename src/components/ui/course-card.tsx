@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { courseTypeStyles } from "@/lib/course-utils";
 
-export type CourseType = "Live" | "Bootcamp" | "Hybrid" | "Self-paced";
+import type { CourseType } from "@/data/courses";
 
 export interface CourseCardProps {
   title: string;
@@ -62,7 +62,7 @@ export function CourseCard({
           {/* Instructor */}
           <div className="mb-3 flex items-center gap-2">
             <Avatar className="h-6 w-6">
-              <AvatarFallback className="bg-indigo-100 text-indigo-700 text-xs font-semibold">
+              <AvatarFallback className="bg-emerald-100 text-emerald-700 text-xs font-semibold">
                 {instructorInitials}
               </AvatarFallback>
             </Avatar>
@@ -72,7 +72,7 @@ export function CourseCard({
           </div>
 
           {/* Title */}
-          <h3 className="mb-3 line-clamp-2 text-sm font-semibold leading-snug text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+          <h3 className="mb-3 line-clamp-2 text-sm font-semibold leading-snug text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
             {title}
           </h3>
 
@@ -95,7 +95,7 @@ export function CourseCard({
             <span className="text-base font-bold text-slate-900 dark:text-white">
               {price}
             </span>
-            <span className="rounded-md border border-indigo-200 px-3 py-1 text-xs font-semibold text-indigo-600 transition-colors group-hover:bg-indigo-50 dark:border-indigo-500/30 dark:text-indigo-400 dark:group-hover:bg-indigo-950/40">
+            <span className="rounded-md border border-emerald-200 px-3 py-1 text-xs font-semibold text-emerald-600 transition-colors group-hover:bg-emerald-50 dark:border-emerald-500/30 dark:text-emerald-400 dark:group-hover:bg-emerald-950/40">
               View Course
             </span>
           </div>

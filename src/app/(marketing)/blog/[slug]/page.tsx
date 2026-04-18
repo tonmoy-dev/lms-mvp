@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
   const post = getBlogPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.title} — DevPath Academy Blog`,
+    title: `${post.title} — Defense Academy Blog`,
     description: post.excerpt,
   };
 }
@@ -133,7 +133,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         {/* Excerpt */}
-        <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mt-6 mb-6 italic border-l-2 border-indigo-400 pl-4">
+        <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mt-6 mb-6 italic border-l-2 border-emerald-400 pl-4">
           {post.excerpt}
         </p>
 
@@ -170,9 +170,9 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
             <div>
               <p className="font-bold text-slate-900 dark:text-white">{post.author.name}</p>
-              <p className="text-xs text-indigo-600 dark:text-indigo-400 mb-2">{post.author.role}</p>
+              <p className="text-xs text-emerald-600 dark:text-emerald-400 mb-2">{post.author.role}</p>
               <p className="text-sm text-slate-500">
-                An expert instructor at DevPath Academy. Teaching thousands of students to build
+                An expert instructor at Defense Academy. Teaching thousands of students to build
                 real skills and land their dream jobs.
               </p>
             </div>
@@ -204,7 +204,7 @@ export default async function BlogPostPage({ params }: Props) {
                     <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide">
                       {rp.category}
                     </span>
-                    <h4 className="font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mt-1 text-sm line-clamp-2">
+                    <h4 className="font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors mt-1 text-sm line-clamp-2">
                       {rp.title}
                     </h4>
                     <p className="text-xs text-slate-400 mt-1 flex items-center gap-1">

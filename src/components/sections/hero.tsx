@@ -16,10 +16,10 @@ const stats = [
 ];
 
 const trustBadges = [
-  { icon: CheckCircle, text: "Free to join" },
-  { icon: Sparkles, text: "Industry-certified mentors" },
-  { icon: BookOpen, text: "English & project-based" },
-  { icon: CheckCircle, text: "Certificate on completion" },
+  { icon: CheckCircle, text: "ISSB Preparation" },
+  { icon: Sparkles, text: "Preliminary Training" },
+  { icon: BookOpen, text: "Expert Mentorship" },
+  { icon: CheckCircle, text: "High Success Rate" },
 ];
 
 function useCountUp(target: number, duration = 1800, isFloat = false) {
@@ -75,7 +75,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl"
       >
         <div
-          className="mx-auto aspect-[1155/678] w-[72rem] bg-gradient-to-tr from-indigo-200 via-violet-100 to-pink-100 opacity-40"
+          className="mx-auto aspect-[1155/678] w-[72rem] bg-gradient-to-tr from-emerald-200 via-teal-100 to-pink-100 opacity-40"
           style={{
             clipPath:
               "polygon(74.1% 44.1%,100% 61.6%,97.5% 26.9%,85.5% 0.1%,80.7% 2%,72.5% 32.5%,60.2% 62.4%,52.4% 68.1%,47.5% 58.3%,45.2% 34.5%,27.5% 76.7%,0.1% 64.9%,17.9% 100%,27.6% 76.8%,76.1% 97.7%,74.1% 44.1%)",
@@ -93,10 +93,10 @@ export function Hero() {
           <motion.div variants={homeHeroItemVariants} className="mb-6 flex justify-center">
             <Badge
               variant="secondary"
-              className="gap-1.5 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-indigo-700 text-sm font-medium"
+              className="gap-1.5 rounded-full border border-emerald-100 bg-emerald-50 px-4 py-1.5 text-emerald-700 text-sm font-medium"
             >
               <Sparkles className="h-3.5 w-3.5" />
-              Trusted by 28,000+ learners worldwide
+              Trusted by thousands of successful candidates
             </Badge>
           </motion.div>
 
@@ -105,9 +105,9 @@ export function Hero() {
             variants={homeHeroItemVariants}
             className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Build Real Skills.{" "}
-            <span className="bg-gradient-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent">
-              Land Real Jobs.
+            Fulfill Your Dream of{" "}
+            <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
+              Becoming an Officer
             </span>
           </motion.h1>
 
@@ -116,9 +116,8 @@ export function Hero() {
             variants={homeHeroItemVariants}
             className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400"
           >
-            Learn web development, AI, and data science from seasoned industry
-            professionals. Flexible, project-driven courses built for every skill
-            level — from beginner to job-ready.
+            Join Defense Academy, founded by Ex-Officer Cadet M Asif Rahman. 
+            We provide the best preparation for Bangladesh Army, Navy, and Air Force recruitment.
           </motion.p>
 
           {/* CTA buttons */}
@@ -130,7 +129,7 @@ export function Hero() {
               href="/courses"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "w-full gap-2 bg-indigo-600 text-white hover:bg-indigo-700 sm:w-auto"
+                "w-full gap-2 bg-emerald-600 text-white hover:bg-emerald-700 sm:w-auto"
               )}
             >
               Explore Courses <ArrowRight className="h-4 w-4" />
@@ -139,10 +138,10 @@ export function Hero() {
               href="/contact"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "w-full border-slate-300 text-slate-700 hover:border-indigo-400 hover:text-indigo-600 sm:w-auto"
+                "w-full border-slate-300 text-slate-700 hover:border-emerald-400 hover:text-emerald-600 sm:w-auto"
               )}
             >
-              Become an Instructor
+              Check Eligibility
             </Link>
           </motion.div>
 
@@ -165,7 +164,7 @@ export function Hero() {
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               {trustBadges.map(({ icon: Icon, text }) => (
                 <span key={text} className="flex items-center gap-1.5 text-sm text-slate-500">
-                  <Icon className="h-4 w-4 text-indigo-500" />
+                  <Icon className="h-4 w-4 text-emerald-500" />
                   {text}
                 </span>
               ))}

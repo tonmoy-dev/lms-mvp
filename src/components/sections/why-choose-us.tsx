@@ -13,33 +13,33 @@ import { Card, CardContent } from "@/components/ui/card";
 const features = [
   {
     icon: BadgeCheck,
-    title: "Industry-Certified Mentors",
+    title: "Ex-Officer Mentors",
     description:
-      "Every instructor is a working professional with at least 5 years of real-world experience — not just academic credentials.",
-    iconBg: "bg-indigo-100",
-    iconColor: "text-indigo-600",
+      "Every instructor is a former armed forces officer or psychologist with real-world experience in the selection process.",
+    iconBg: "bg-emerald-100",
+    iconColor: "text-emerald-600",
   },
   {
     icon: Video,
-    title: "Live + On-Demand Hybrid",
+    title: "Comprehensive Training",
     description:
-      "Join live sessions with your cohort or catch up with full recordings anytime. You set the pace — we keep you on track.",
-    iconBg: "bg-violet-100",
-    iconColor: "text-violet-600",
+      "We provide rigorous physical, psychological, and theoretical training tailored for ISSB and preliminary exams.",
+    iconBg: "bg-teal-100",
+    iconColor: "text-teal-600",
   },
   {
     icon: Award,
-    title: "Recognised Certificates",
+    title: "Proven Success Rate",
     description:
-      "Earn verifiable completion certificates accepted by top tech companies. Each cert includes a unique shareable URL.",
+      "Hundreds of our cadets have successfully secured their Green Cards and are currently serving as officers.",
     iconBg: "bg-emerald-100",
     iconColor: "text-emerald-600",
   },
   {
     icon: Rocket,
-    title: "Project-Based Learning",
+    title: "Mock Screenings",
     description:
-      "Build a real portfolio while you learn. Every course includes hands-on projects you can immediately showcase to employers.",
+      "Experience realistic ISSB mock tests and interviews to eliminate fear and build unshakable confidence.",
     iconBg: "bg-amber-100",
     iconColor: "text-amber-600",
   },
@@ -62,10 +62,10 @@ export function WhyChooseUs() {
         {/* Heading */}
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-            Why DevPath Academy?
+            Why Defense Academy?
           </h2>
           <p className="mt-3 text-base text-slate-500 dark:text-slate-400">
-            A platform designed to turn curiosity into a career
+            The right guidance to turn your dream into reality
           </p>
         </div>
 
@@ -100,7 +100,7 @@ export function WhyChooseUs() {
         <div className="mt-12 text-center">
           <a
             href="#courses"
-            className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-5 py-2.5 text-sm font-semibold text-indigo-700 transition-colors hover:bg-indigo-100"
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-5 py-2.5 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-100"
           >
             Browse All Courses →
           </a>

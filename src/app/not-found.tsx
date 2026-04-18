@@ -6,8 +6,8 @@ export default function NotFound() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50 px-4 text-center">
       <div className="mx-auto max-w-md">
         <div className="mb-6 flex justify-center">
-          <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-indigo-100">
-            <FileQuestion className="h-10 w-10 text-indigo-600" />
+          <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-emerald-100">
+            <FileQuestion className="h-10 w-10 text-emerald-600" />
           </div>
         </div>
 
@@ -25,7 +25,7 @@ export default function NotFound() {
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-700"
+            className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
           >
             <Home className="h-4 w-4" />
             Back to Home

@@ -59,7 +59,7 @@ export default function InstructorPage() {
             Here&apos;s an overview of your courses and students.
           </p>
         </div>
-        <button className="hidden sm:flex items-center gap-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors">
+        <button className="hidden sm:flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors">
           <Plus className="h-4 w-4" />
           New Course
         </button>
@@ -73,7 +73,7 @@ export default function InstructorPage() {
             value: mockStats.totalStudents.toLocaleString(),
             sub: `+${mockStats.monthlyStudents} this month`,
             icon: Users,
-            color: "text-indigo-600 bg-indigo-50 dark:bg-indigo-900/30",
+            color: "text-emerald-600 bg-emerald-50 dark:bg-emerald-900/30",
           },
           {
             label: "Total Revenue",
@@ -94,7 +94,7 @@ export default function InstructorPage() {
             value: mockStats.totalCourses,
             sub: "Active & published",
             icon: BookOpen,
-            color: "text-violet-600 bg-violet-50 dark:bg-violet-900/30",
+            color: "text-teal-600 bg-teal-50 dark:bg-teal-900/30",
           },
           {
             label: "Completions",
@@ -130,12 +130,12 @@ export default function InstructorPage() {
         <div className="lg:col-span-2 rounded-xl border border-border bg-white dark:bg-slate-900 overflow-hidden">
           <div className="flex items-center justify-between px-5 py-4 border-b border-border">
             <h2 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <BarChart2 className="h-4.5 w-4.5 text-indigo-500" />
+              <BarChart2 className="h-4.5 w-4.5 text-emerald-500" />
               Your Courses
             </h2>
             <Link
               href="/courses"
-              className="text-xs text-indigo-600 hover:underline dark:text-indigo-400 flex items-center gap-0.5"
+              className="text-xs text-emerald-600 hover:underline dark:text-emerald-400 flex items-center gap-0.5"
             >
               View public listing <ChevronRight className="h-3.5 w-3.5" />
             </Link>
@@ -188,14 +188,14 @@ export default function InstructorPage() {
                   <div className="flex items-center gap-1.5 shrink-0">
                     <Link
                       href={`/courses/${course.slug}`}
-                      className="rounded-md p-1.5 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors"
+                      className="rounded-md p-1.5 text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors"
                       title="Preview"
                     >
                       <Eye className="h-4 w-4" />
                     </Link>
                     <Link
                       href={`/courses/${course.slug}`}
-                      className="rounded-md p-1.5 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors"
+                      className="rounded-md p-1.5 text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors"
                       title="Analytics"
                     >
                       <TrendingUp className="h-4 w-4" />
@@ -211,7 +211,7 @@ export default function InstructorPage() {
         <div className="rounded-xl border border-border bg-white dark:bg-slate-900 overflow-hidden">
           <div className="px-5 py-4 border-b border-border">
             <h2 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <TrendingUp className="h-4.5 w-4.5 text-indigo-500" />
+              <TrendingUp className="h-4.5 w-4.5 text-emerald-500" />
               Recent Activity
             </h2>
           </div>
@@ -219,7 +219,7 @@ export default function InstructorPage() {
             {mockActivity.map((item, i) => (
               <div key={i} className="px-5 py-3.5">
                 <div className="flex items-start gap-3">
-                  <div className="mt-0.5 h-7 w-7 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-xs font-bold text-indigo-600 dark:text-indigo-400 shrink-0">
+                  <div className="mt-0.5 h-7 w-7 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0">
                     {item.name[0]}
                   </div>
                   <div>
@@ -233,7 +233,7 @@ export default function InstructorPage() {
             ))}
           </div>
           <div className="px-5 py-3 border-t border-border">
-            <button className="text-xs text-indigo-600 hover:underline dark:text-indigo-400">
+            <button className="text-xs text-emerald-600 hover:underline dark:text-emerald-400">
               View all activity →
             </button>
           </div>
@@ -254,7 +254,7 @@ export default function InstructorPage() {
                 className={cn(
                   "rounded-md px-2.5 py-1 text-xs font-medium transition-colors",
                   p === "30d"
-                    ? "bg-indigo-600 text-white"
+                    ? "bg-emerald-600 text-white"
                     : "text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800"
                 )}
               >
@@ -269,10 +269,10 @@ export default function InstructorPage() {
             (h, i) => (
               <div
                 key={i}
-                className="flex-1 rounded-sm bg-indigo-100 dark:bg-indigo-900/30 relative overflow-hidden group"
+                className="flex-1 rounded-sm bg-emerald-100 dark:bg-emerald-900/30 relative overflow-hidden group"
               >
                 <div
-                  className="absolute bottom-0 w-full rounded-sm bg-linear-to-t from-indigo-600 to-indigo-500 group-hover:from-indigo-700 group-hover:to-indigo-600 transition-colors"
+                  className="absolute bottom-0 w-full rounded-sm bg-linear-to-t from-emerald-600 to-emerald-500 group-hover:from-emerald-700 group-hover:to-emerald-600 transition-colors"
                   style={{ height: `${h}%` }}
                 />
               </div>

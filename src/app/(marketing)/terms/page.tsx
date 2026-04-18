@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { RevealBlock } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — DevPath Academy",
-  description: "Terms and conditions for using DevPath Academy.",
+  title: "Terms of Service — Defense Academy",
+  description: "Terms and conditions for using Defense Academy.",
 };
 
 export default function TermsPage() {
@@ -23,7 +23,7 @@ export default function TermsPage() {
               1. Acceptance of Terms
             </h2>
             <p className="mt-2">
-              By accessing or using DevPath Academy, you agree to be bound by
+              By accessing or using Defense Academy, you agree to be bound by
               these Terms of Service. If you do not agree, please do not use
               our services.
             </p>
@@ -68,7 +68,7 @@ export default function TermsPage() {
             </h2>
             <p className="mt-2">
               All course content, trademarks, and materials are the property of
-              DevPath Academy and its instructors. Unauthorized use is
+              Defense Academy and its instructors. Unauthorized use is
               prohibited.
             </p>
           </section>

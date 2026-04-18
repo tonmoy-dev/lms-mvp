@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 import { lightTransition } from "@/lib/page-motion";
 
 const perks = [
-  "Set your own schedule and curriculum",
-  "Earn 70% revenue on every enrollment",
-  "Full platform support and marketing",
+  "Train the future leaders of the armed forces",
+  "Flexible schedule and competitive remuneration",
+  "Contribute directly to national defense excellence",
 ];
 
 export function InstructorCta() {
@@ -26,22 +26,20 @@ export function InstructorCta() {
         >
           {/* Left copy */}
           <div className="max-w-xl">
-            <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-400">
-              For Educators &amp; Professionals
+            <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
+              For Ex-Officers &amp; Psychologists
             </div>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Share Your Knowledge.{" "}
-              <span className="text-indigo-400">Earn an Income.</span>
+              Share Your Experience.{" "}
+              <span className="text-emerald-400">Guide the Future.</span>
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-400">
-              Are you a software engineer, data scientist, or product specialist? Join
-              DevPath Academy as an instructor and reach thousands of ambitious learners
-              worldwide.
+              Are you an Ex-Officer or a certified psychologist? Join Defense Academy as a mentor and guide ambitious candidates towards success in their armed forces journey.
             </p>
             <ul className="mt-6 space-y-3">
               {perks.map((perk) => (
                 <li key={perk} className="flex items-center gap-2.5 text-sm text-slate-300">
-                  <CheckCircle className="h-4 w-4 shrink-0 text-indigo-400" />
+                  <CheckCircle className="h-4 w-4 shrink-0 text-emerald-400" />
                   {perk}
                 </li>
               ))}
@@ -54,10 +52,10 @@ export function InstructorCta() {
               href="/contact"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "gap-2 bg-indigo-600 text-white hover:bg-indigo-500"
+                "gap-2 bg-emerald-600 text-white hover:bg-emerald-500"
               )}
             >
-              Apply to Teach <ArrowRight className="h-4 w-4" />
+              Apply as Mentor <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </motion.div>

@@ -43,7 +43,7 @@ export default function ForgotPasswordPage() {
         </p>
         <Link
           href="/signin"
-          className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors"
+          className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 hover:text-emerald-800 transition-colors"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           Back to Sign In

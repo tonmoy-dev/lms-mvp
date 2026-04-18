@@ -19,14 +19,13 @@ import { courseIconMap, courseTypeStyles } from "@/lib/course-utils";
 import { Course, CourseType, CourseCategory } from "@/data/courses";
 import { RevealBlock } from "@/components/motion/reveal";
 
-const courseTypes: CourseType[] = ["Live", "Bootcamp", "Hybrid", "Self-paced"];
+const courseTypes: CourseType[] = ["Live", "Offline", "Hybrid", "Self-paced", "Test"];
 const allCategories: (CourseCategory | "All")[] = [
   "All",
-  "Web Development",
-  "Data Science",
-  "AI & Machine Learning",
-  "Cloud & DevOps",
-  "Cybersecurity",
+  "ISSB Preparation",
+  "Preliminary",
+  "Written Test",
+  "Screening Test",
 ];
 const sortOptions = [
   { label: "Most Popular", value: "popular" },
@@ -89,7 +88,7 @@ function CourseGridCard({ course }: { course: Course }) {
             </span>
           </div>
 
-          <h3 className="mb-2 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+          <h3 className="mb-2 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
             {course.title}
           </h3>
 
@@ -105,7 +104,7 @@ function CourseGridCard({ course }: { course: Course }) {
           </div>
 
           {course.nextBatch && (
-            <p className="mb-3 text-xs text-indigo-600 dark:text-indigo-400 font-medium">
+            <p className="mb-3 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
               Next batch: {new Date(course.nextBatch).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
             </p>
           )}
@@ -124,7 +123,7 @@ function CourseGridCard({ course }: { course: Course }) {
             <span
               className={cn(
                 buttonVariants({ size: "sm" }),
-                "shrink-0 bg-slate-900 text-white hover:bg-slate-700 dark:bg-indigo-600 dark:hover:bg-indigo-700"
+                "shrink-0 bg-slate-900 text-white hover:bg-slate-700 dark:bg-emerald-600 dark:hover:bg-emerald-700"
               )}
             >
               View Course
@@ -246,7 +245,7 @@ export function CoursesClient({ courses }: CoursesClientProps) {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
           >
             {sortOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -266,8 +265,8 @@ export function CoursesClient({ courses }: CoursesClientProps) {
             className={cn(
               "rounded-full border px-3 py-1 text-xs font-semibold transition-colors",
               activeTypes.has(type)
-                ? "border-indigo-600 bg-indigo-600 text-white"
-                : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:border-indigo-300 hover:text-indigo-600"
+                ? "border-emerald-600 bg-emerald-600 text-white"
+                : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:border-emerald-300 hover:text-emerald-600"
             )}
           >
             {type}
@@ -283,7 +282,7 @@ export function CoursesClient({ courses }: CoursesClientProps) {
             className={cn(
               "rounded-full border px-3 py-1 text-xs font-semibold transition-colors",
               activeCategory === cat
-                ? "border-slate-900 bg-slate-900 text-white dark:border-indigo-500 dark:bg-indigo-600"
+                ? "border-slate-900 bg-slate-900 text-white dark:border-emerald-500 dark:bg-emerald-600"
                 : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:border-slate-400 hover:text-slate-900"
             )}
           >

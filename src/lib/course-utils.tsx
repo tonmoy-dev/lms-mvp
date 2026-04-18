@@ -40,10 +40,11 @@ export const courseIconMapLg: Record<string, React.ReactNode> = {
 };
 
 export const courseTypeStyles: Record<CourseType, string> = {
-  Live: "bg-red-100 text-red-700 border-red-200",
-  Bootcamp: "bg-violet-100 text-violet-700 border-violet-200",
-  Hybrid: "bg-amber-100 text-amber-700 border-amber-200",
+  Live:         "bg-red-100 text-red-700 border-red-200",
+  Offline:      "bg-teal-100 text-teal-700 border-teal-200",
+  Hybrid:       "bg-amber-100 text-amber-700 border-amber-200",
   "Self-paced": "bg-emerald-100 text-emerald-700 border-emerald-200",
+  Test:         "bg-violet-100 text-violet-700 border-violet-200",
 };
 
 export const courseLevelStyles: Record<string, string> = {

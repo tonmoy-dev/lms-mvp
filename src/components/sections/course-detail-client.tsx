@@ -74,13 +74,13 @@ function CurriculumAccordion({ section, index }: { section: CurriculumSection; i
             >
               <div className="flex items-center gap-3 min-w-0">
                 {lesson.preview ? (
-                  <Play className="h-4 w-4 shrink-0 text-indigo-500" />
+                  <Play className="h-4 w-4 shrink-0 text-emerald-500" />
                 ) : (
                   <Lock className="h-4 w-4 shrink-0 text-slate-300" />
                 )}
                 <span className="truncate text-sm text-slate-700 dark:text-slate-300">{lesson.title}</span>
                 {lesson.preview && (
-                  <span className="shrink-0 rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-medium text-indigo-600">
+                  <span className="shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-600">
                     Preview
                   </span>
                 )}
@@ -274,7 +274,7 @@ function BatchCard({ batch, courseSlug }: { batch: Batch; courseSlug: string }) 
                 </div>
                 <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
                   <div
-                    className="h-full rounded-full bg-indigo-500 transition-all"
+                    className="h-full rounded-full bg-emerald-500 transition-all"
                     style={{ width: `${seatsPercent}%` }}
                   />
                 </div>
@@ -300,7 +300,7 @@ function BatchCard({ batch, courseSlug }: { batch: Batch; courseSlug: string }) 
               href={`/courses/${courseSlug}/enroll`}
               className={cn(
                 buttonVariants({ size: "sm" }),
-                "bg-indigo-600 text-white hover:bg-indigo-700"
+                "bg-emerald-600 text-white hover:bg-emerald-700"
               )}
             >
               {isSelfPaced ? "Enroll Now" : "Reserve a Seat"}
@@ -371,7 +371,7 @@ function PricingSidebar({ course }: { course: Course }) {
             href="#batches"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "w-full justify-center bg-indigo-600 text-white hover:bg-indigo-700"
+              "w-full justify-center bg-emerald-600 text-white hover:bg-emerald-700"
             )}
           >
             View Batches
@@ -485,13 +485,13 @@ export function CourseDetailClient({ course }: { course: Course }) {
         <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
           <ol className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
             <li>
-              <Link href="/" className="hover:text-indigo-600 transition-colors">
+              <Link href="/" className="hover:text-emerald-600 transition-colors">
                 Home
               </Link>
             </li>
             <ChevronRight className="h-3.5 w-3.5" />
             <li>
-              <Link href="/courses" className="hover:text-indigo-600 transition-colors">
+              <Link href="/courses" className="hover:text-emerald-600 transition-colors">
                 Courses
               </Link>
             </li>
@@ -565,7 +565,7 @@ export function CourseDetailClient({ course }: { course: Course }) {
                 by{" "}
                 <button
                   onClick={() => switchTab("instructor")}
-                  className="font-medium text-indigo-600 hover:underline"
+                  className="font-medium text-emerald-600 hover:underline"
                 >
                   {course.instructor.name}
                 </button>
@@ -588,13 +588,13 @@ export function CourseDetailClient({ course }: { course: Course }) {
                       className={cn(
                         "shrink-0 border-b-2 px-5 py-3 text-sm font-semibold transition-colors",
                         activeTab === tab.id
-                          ? "border-indigo-600 text-indigo-600"
+                          ? "border-emerald-600 text-emerald-600"
                           : "border-transparent text-slate-500 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-600 hover:text-slate-700 dark:hover:text-slate-200"
                       )}
                     >
                       {tab.label}
                       {tab.id === "batches" && (
-                        <span className="ml-1.5 rounded-full bg-indigo-100 px-1.5 py-0.5 text-xs text-indigo-700">
+                        <span className="ml-1.5 rounded-full bg-emerald-100 px-1.5 py-0.5 text-xs text-emerald-700">
                           {course.batches.length}
                         </span>
                       )}
@@ -691,7 +691,7 @@ export function CourseDetailClient({ course }: { course: Course }) {
                         <h3 className="text-base font-bold text-slate-900 dark:text-white">
                           {course.instructor.name}
                         </h3>
-                        <p className="text-sm text-indigo-600">{course.instructor.title}</p>
+                        <p className="text-sm text-emerald-600">{course.instructor.title}</p>
 
                         <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
                           <span className="flex items-center gap-1">

@@ -4,7 +4,7 @@ import { RevealSection } from "@/components/motion/reveal";
 import { courses, categories } from "@/data/courses";
 
 export const metadata = {
-  title: "Explore Courses — DevPath Academy",
+  title: "Explore Courses — Defense Academy",
   description:
     "Browse 120+ industry-vetted courses in web development, AI, data science, and more.",
 };
@@ -28,7 +28,7 @@ export default function CoursesPage() {
                 className="flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-1.5 text-sm text-slate-600 dark:text-slate-400 shadow-sm"
               >
                 <span className="font-medium text-slate-800 dark:text-slate-200">{label}</span>
-                <span className="rounded-full bg-indigo-100 dark:bg-indigo-900/50 px-1.5 py-0.5 text-xs font-semibold text-indigo-700 dark:text-indigo-400">
+                <span className="rounded-full bg-emerald-100 dark:bg-emerald-900/50 px-1.5 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
                   {count}
                 </span>
               </div>

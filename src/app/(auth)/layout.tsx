@@ -4,8 +4,8 @@ import { BookOpen, Code2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | DevPath Academy",
-    default: "DevPath Academy",
+    template: "%s | Defense Academy",
+    default: "Defense Academy",
   },
 };
 
@@ -30,11 +30,11 @@ export default function AuthLayout({
       <div className="flex flex-1 flex-col px-6 py-10 sm:px-10 lg:px-16 xl:px-24">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 w-fit">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600">
             <Code2 className="h-4 w-4 text-white" />
           </div>
           <span className="text-base font-bold text-slate-900 dark:text-white">
-            DevPath<span className="text-indigo-600 dark:text-indigo-400"> Academy</span>
+            Defense<span className="text-emerald-600 dark:text-emerald-400"> Academy</span>
           </span>
         </Link>
 

@@ -3,8 +3,8 @@ import { ContactClient } from "@/components/sections/contact-client";
 import { RevealSection } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
-  title: "Contact Us — DevPath Academy",
-  description: "Get in touch with the DevPath Academy team.",
+  title: "Contact Us — Defense Academy",
+  description: "Get in touch with the Defense Academy team.",
 };
 
 export default function ContactPage() {

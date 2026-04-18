@@ -44,11 +44,11 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600">
             <Code2 className="h-4 w-4 text-white" />
           </div>
           <span className="text-lg font-bold text-slate-900 dark:text-white">
-            DevPath<span className="text-indigo-600 dark:text-indigo-400"> Academy</span>
+            Defense<span className="text-emerald-600 dark:text-emerald-400"> Academy</span>
           </span>
         </Link>
 
@@ -58,7 +58,7 @@ export function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
+              className="text-sm font-medium text-slate-600 transition-colors hover:text-emerald-600 dark:text-slate-400 dark:hover:text-emerald-400"
             >
               {link.label}
             </Link>
@@ -141,25 +141,7 @@ export function Navbar() {
                 </div>
               )}
             </div>
-          ) : (
-            <>
-              <Link
-                href="/signin"
-                className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/register"
-                className={cn(
-                  buttonVariants({ size: "sm" }),
-                  "bg-indigo-600 hover:bg-indigo-700 text-white"
-                )}
-              >
-                Get Started
-              </Link>
-            </>
-          )}
+          ) : null}
         </div>
 
         {/* Mobile Actions */}
@@ -177,11 +159,11 @@ export function Navbar() {
             <SheetContent side="right" className="w-72">
               <SheetHeader>
                 <SheetTitle className="flex items-center gap-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-600">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600">
                     <Code2 className="h-3.5 w-3.5 text-white" />
                   </div>
                   <span className="text-base font-bold text-slate-900 dark:text-white">
-                    DevPath<span className="text-indigo-600 dark:text-indigo-400"> Academy</span>
+            Defense<span className="text-emerald-600 dark:text-emerald-400"> Academy</span>
                   </span>
                 </SheetTitle>
               </SheetHeader>
@@ -204,18 +186,18 @@ export function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-indigo-400"
+                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400"
                   >
                     {link.label}
                   </Link>
                 ))}
                 {user && (
                   <>
-                    <Link href="/dashboard" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-indigo-400">
+                    <Link href="/dashboard" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400">
                       Dashboard
                     </Link>
                     {user.role === "instructor" && (
-                      <Link href="/instructor" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-indigo-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-indigo-400">
+                      <Link href="/instructor" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400">
                         Instructor Panel
                       </Link>
                     )}
@@ -232,27 +214,7 @@ export function Navbar() {
                     <LogOut className="mr-2 h-4 w-4" />
                     Sign Out
                   </button>
-                ) : (
-                  <>
-                    <Link
-                      href="/signin"
-                      onClick={() => setOpen(false)}
-                      className={cn(buttonVariants({ variant: "outline" }), "w-full justify-center")}
-                    >
-                      Sign In
-                    </Link>
-                    <Link
-                      href="/register"
-                      onClick={() => setOpen(false)}
-                      className={cn(
-                        buttonVariants(),
-                        "w-full justify-center bg-indigo-600 hover:bg-indigo-700 text-white"
-                      )}
-                    >
-                      Get Started
-                    </Link>
-                  </>
-                )}
+                ) : null}
               </div>
             </SheetContent>
           </Sheet>

@@ -11,9 +11,6 @@ const pages = [
   { title: "Courses", href: "/courses" },
   { title: "About", href: "/about" },
   { title: "Contact", href: "/contact" },
-  { title: "Sign In", href: "/signin" },
-  { title: "Register", href: "/register" },
-  { title: "Profile", href: "/profile" },
 ];
 
 interface SearchResult {
@@ -143,7 +140,7 @@ export function SearchModal() {
                   className={cn(
                     "flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left transition-colors",
                     selectedIndex === i
-                      ? "bg-indigo-50 dark:bg-indigo-950/50"
+                      ? "bg-emerald-50 dark:bg-emerald-950/50"
                       : "hover:bg-slate-50 dark:hover:bg-slate-800"
                   )}
                 >
@@ -152,7 +149,7 @@ export function SearchModal() {
                       className={cn(
                         "truncate text-sm font-medium",
                         selectedIndex === i
-                          ? "text-indigo-600 dark:text-indigo-400"
+                          ? "text-emerald-600 dark:text-emerald-400"
                           : "text-slate-900 dark:text-white"
                       )}
                     >
@@ -168,7 +165,7 @@ export function SearchModal() {
                     className={cn(
                       "h-3.5 w-3.5 shrink-0 transition-opacity",
                       selectedIndex === i
-                        ? "opacity-100 text-indigo-500"
+                        ? "opacity-100 text-emerald-500"
                         : "opacity-0"
                     )}
                   />

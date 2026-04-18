@@ -12,13 +12,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DevPath Academy — Build Real Skills. Land Real Jobs.",
+  title: "Defense Academy — Build Real Skills. Land Real Jobs.",
   description:
-    "Learn web development, AI, and data science from industry experts. Flexible online courses designed for every level.",
-  keywords: ["online learning", "web development", "coding bootcamp", "data science", "AI courses"],
+    "Learn from industry experts. Flexible online courses designed for every level.",
+  keywords: ["online learning", "defence courses", "issb", "pathfinder"],
   openGraph: {
-    title: "DevPath Academy",
-    description: "Build Real Skills. Land Real Jobs.",
+    title: "Defense Academy",
+    description: "Prepare for your officer dream.",
     type: "website",
   },
 };

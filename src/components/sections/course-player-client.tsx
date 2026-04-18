@@ -70,7 +70,7 @@ export function CoursePlayerClient({ course, currentLessonId }: Props) {
       <header className="flex h-14 shrink-0 items-center justify-between border-b border-slate-800 px-4 gap-3">
         <div className="flex items-center gap-3 min-w-0">
           <Link href="/" className="shrink-0 flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-600">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600">
               <Code2 className="h-3.5 w-3.5 text-white" />
             </div>
           </Link>
@@ -93,7 +93,7 @@ export function CoursePlayerClient({ course, currentLessonId }: Props) {
           <div className="hidden sm:flex items-center gap-2">
             <div className="h-1.5 w-24 rounded-full bg-slate-700 overflow-hidden">
               <div
-                className="h-full rounded-full bg-indigo-500 transition-all"
+                className="h-full rounded-full bg-emerald-500 transition-all"
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
@@ -132,7 +132,7 @@ export function CoursePlayerClient({ course, currentLessonId }: Props) {
           <div className="flex-1 p-4 sm:p-6 max-w-4xl">
             <div className="flex items-start justify-between gap-4 mb-4">
               <div>
-                <p className="text-xs text-indigo-400 font-semibold uppercase tracking-wide mb-1">
+                <p className="text-xs text-emerald-400 font-semibold uppercase tracking-wide mb-1">
                   Lesson {currentIndex + 1} of {allLessons.length}
                 </p>
                 <h1 className="text-xl sm:text-2xl font-bold text-white">{currentLesson.title}</h1>
@@ -156,7 +156,7 @@ export function CoursePlayerClient({ course, currentLessonId }: Props) {
               ) : (
                 <button
                   onClick={markComplete}
-                  className="rounded-lg bg-indigo-600 hover:bg-indigo-700 px-4 py-1.5 text-xs font-semibold text-white transition-colors shrink-0"
+                  className="rounded-lg bg-emerald-600 hover:bg-emerald-700 px-4 py-1.5 text-xs font-semibold text-white transition-colors shrink-0"
                 >
                   Mark Complete
                 </button>
@@ -174,7 +174,7 @@ export function CoursePlayerClient({ course, currentLessonId }: Props) {
                   "Ask questions in the Q&A section below the video if you get stuck.",
                 ].map((note, i) => (
                   <p key={i} className="text-sm text-slate-400 flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-500 shrink-0" />
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0" />
                     {note}
                   </p>
                 ))}
@@ -198,7 +198,7 @@ export function CoursePlayerClient({ course, currentLessonId }: Props) {
               {nextLesson ? (
                 <Link
                   href={`/learn/${course.slug}/${nextLesson.id}`}
-                  className="flex items-center gap-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 px-4 py-2 text-sm font-medium text-white transition-colors"
+                  className="flex items-center gap-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 px-4 py-2 text-sm font-medium text-white transition-colors"
                 >
                   <span className="max-w-32 truncate text-xs sm:text-sm">{nextLesson.title}</span>
                   <span className="hidden sm:inline">: Next</span>
@@ -240,11 +240,11 @@ export function CoursePlayerClient({ course, currentLessonId }: Props) {
               <span className="text-slate-400">
                 {completedLessons.size} / {allLessons.length} lessons
               </span>
-              <span className="text-indigo-400 font-semibold">{progressPercent}%</span>
+              <span className="text-emerald-400 font-semibold">{progressPercent}%</span>
             </div>
             <div className="h-1.5 rounded-full bg-slate-700 overflow-hidden">
               <div
-                className="h-full rounded-full bg-indigo-500 transition-all"
+                className="h-full rounded-full bg-emerald-500 transition-all"
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
@@ -278,7 +278,7 @@ export function CoursePlayerClient({ course, currentLessonId }: Props) {
                           className={cn(
                             "flex items-start gap-3 px-4 py-2.5 text-xs transition-colors",
                             isActive
-                              ? "bg-indigo-600/10 border-l-2 border-indigo-500"
+                              ? "bg-emerald-600/10 border-l-2 border-emerald-500"
                               : "hover:bg-slate-800/50 border-l-2 border-transparent"
                           )}
                         >
@@ -286,7 +286,7 @@ export function CoursePlayerClient({ course, currentLessonId }: Props) {
                             {isDone ? (
                               <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                             ) : isActive ? (
-                              <Play className="h-4 w-4 text-indigo-400 fill-indigo-400" />
+                              <Play className="h-4 w-4 text-emerald-400 fill-emerald-400" />
                             ) : lesson.preview ? (
                               <Circle className="h-4 w-4 text-slate-500" />
                             ) : (
@@ -298,7 +298,7 @@ export function CoursePlayerClient({ course, currentLessonId }: Props) {
                               className={cn(
                                 "leading-snug",
                                 isActive
-                                  ? "text-indigo-300 font-medium"
+                                  ? "text-emerald-300 font-medium"
                                   : isDone
                                   ? "text-slate-400 line-through"
                                   : "text-slate-400"

@@ -20,21 +20,12 @@ export interface SessionUser {
 export const mockUsers: MockUser[] = [
   {
     id: "u1",
-    name: "Alex Johnson",
-    email: "alex@devpath.com",
+    name: "Demo User",
+    email: "rx@gmail.com",
     password: "password123",
     role: "student",
-    initials: "AJ",
-    avatarColor: "bg-indigo-100 text-indigo-700",
-  },
-  {
-    id: "u2",
-    name: "Sarah Lin",
-    email: "instructor@devpath.com",
-    password: "password123",
-    role: "instructor",
-    initials: "SL",
-    avatarColor: "bg-violet-100 text-violet-700",
+    initials: "RX",
+    avatarColor: "bg-emerald-100 text-emerald-700",
   },
 ];
 
@@ -78,7 +69,7 @@ export function registerUser(
     email,
     role: "student",
     initials,
-    avatarColor: "bg-indigo-100 text-indigo-700",
+    avatarColor: "bg-emerald-100 text-emerald-700",
   };
   if (typeof window !== "undefined") {
     localStorage.setItem(SESSION_KEY, JSON.stringify(session));

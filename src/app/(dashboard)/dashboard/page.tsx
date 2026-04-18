@@ -56,7 +56,7 @@ export default function DashboardPage() {
             label: "Enrolled",
             value: mockUser.enrolledCourses.length,
             icon: BookOpen,
-            color: "text-indigo-600 bg-indigo-50 dark:bg-indigo-900/30",
+            color: "text-emerald-600 bg-emerald-50 dark:bg-emerald-900/30",
           },
           {
             label: "Completed",
@@ -74,7 +74,7 @@ export default function DashboardPage() {
             label: "Certificates",
             value: mockUser.certificatesEarned,
             icon: Award,
-            color: "text-violet-600 bg-violet-50 dark:bg-violet-900/30",
+            color: "text-teal-600 bg-teal-50 dark:bg-teal-900/30",
           },
         ].map(({ label, value, icon: Icon, color }) => (
           <div
@@ -91,14 +91,14 @@ export default function DashboardPage() {
       </div>
 
       {/* Streak banner */}
-      <div className="rounded-xl bg-linear-to-r from-indigo-600 to-violet-600 p-4 sm:p-5 flex items-center justify-between gap-4">
+      <div className="rounded-xl bg-linear-to-r from-emerald-600 to-teal-600 p-4 sm:p-5 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20">
             <Flame className="h-5 w-5 text-white" />
           </div>
           <div>
             <p className="font-semibold text-white">7-day learning streak!</p>
-            <p className="text-xs text-indigo-100">
+            <p className="text-xs text-emerald-100">
               You&apos;ve been learning every day this week. Keep it up!
             </p>
           </div>
@@ -123,12 +123,12 @@ export default function DashboardPage() {
         <section>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-indigo-500" />
+              <TrendingUp className="h-5 w-5 text-emerald-500" />
               Continue Learning
             </h2>
             <Link
               href="/courses"
-              className="text-xs text-indigo-600 hover:underline dark:text-indigo-400 flex items-center gap-1"
+              className="text-xs text-emerald-600 hover:underline dark:text-emerald-400 flex items-center gap-1"
             >
               Browse all <ChevronRight className="h-3.5 w-3.5" />
             </Link>
@@ -252,7 +252,7 @@ export default function DashboardPage() {
                       </span>
                       <Link
                         href={`/courses/${course.slug}`}
-                        className="text-xs text-indigo-600 hover:underline dark:text-indigo-400"
+                        className="text-xs text-emerald-600 hover:underline dark:text-emerald-400"
                       >
                         View certificate
                       </Link>
@@ -274,7 +274,7 @@ export default function DashboardPage() {
           </h2>
           <Link
             href="/courses"
-            className="text-xs text-indigo-600 hover:underline dark:text-indigo-400 flex items-center gap-1"
+            className="text-xs text-emerald-600 hover:underline dark:text-emerald-400 flex items-center gap-1"
           >
             See all <ChevronRight className="h-3.5 w-3.5" />
           </Link>

@@ -1,15 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { useAuth } from "@/components/providers/auth-provider";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { GoogleIcon } from "@/components/ui/google-icon";
-import { useAuth } from "@/components/providers/auth-provider";
+import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { Eye, EyeOff, Loader2 } from "lucide-react";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 type InputMode = "email" | "phone";
 
@@ -69,7 +68,10 @@ export default function SignInPage() {
       return;
     }
     setIsLoading(true);
-    const result = await signIn(formData.email || formData.phone, formData.password);
+    const result = await signIn(
+      formData.email || formData.phone,
+      formData.password,
+    );
     setIsLoading(false);
     if (!result.success) {
       setErrors({ password: result.error ?? "Sign in failed." });
@@ -93,31 +95,11 @@ export default function SignInPage() {
           Welcome back
         </h1>
         <p className="mt-1.5 text-sm text-slate-500 dark:text-slate-400">
-          Sign in to your DevPath Academy account
+          Sign in to your Defense Academy account
         </p>
-        <p className="mt-2 text-xs text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-900/40 rounded-lg px-3 py-1.5">
-          Demo: <strong>alex@devpath.com</strong> / <strong>password123</strong>
-        </p>
-      </div>
-
-      <button
-        type="button"
-        onClick={handleGoogleSignIn}
-        disabled={isGoogleLoading || isLoading}
-        className="flex w-full items-center justify-center gap-2.5 rounded-lg border border-border bg-background py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
-      >
-        {isGoogleLoading ? (
-          <Loader2 className="h-4 w-4 animate-spin" />
-        ) : (
-          <GoogleIcon />
-        )}
-        Continue with Google
-      </button>
-
-      <div className="my-5 flex items-center gap-3">
-        <div className="h-px flex-1 bg-border" />
-        <span className="text-xs text-muted-foreground">or</span>
-        <div className="h-px flex-1 bg-border" />
+        {/* <p className="mt-2 text-xs text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/40 rounded-lg px-3 py-1.5">
+          Demo: <strong>rx@gmail.com</strong> / <strong>password123</strong>
+        </p> */}
       </div>
 
       <form onSubmit={handleSubmit} noValidate className="space-y-4">
@@ -128,8 +110,8 @@ export default function SignInPage() {
             className={cn(
               "flex-1 rounded-md py-1.5 text-sm font-medium transition-colors",
               inputMode === "email"
-                ? "bg-slate-900 text-white shadow-sm dark:bg-indigo-600"
-                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+                ? "bg-slate-900 text-white shadow-sm dark:bg-emerald-600"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200",
             )}
           >
             Email
@@ -140,8 +122,8 @@ export default function SignInPage() {
             className={cn(
               "flex-1 rounded-md py-1.5 text-sm font-medium transition-colors",
               inputMode === "phone"
-                ? "bg-slate-900 text-white shadow-sm dark:bg-indigo-600"
-                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+                ? "bg-slate-900 text-white shadow-sm dark:bg-emerald-600"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200",
             )}
           >
             Phone
@@ -196,7 +178,7 @@ export default function SignInPage() {
             </label>
             <Link
               href="/forgot-password"
-              className="text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+              className="text-xs text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
             >
               Forgot password?
             </Link>
@@ -254,7 +236,7 @@ export default function SignInPage() {
         Don&apos;t have an account?{" "}
         <Link
           href="/register"
-          className="font-semibold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          className="font-semibold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
         >
           Sign up
         </Link>
@@ -262,11 +244,17 @@ export default function SignInPage() {
 
       <p className="mt-4 text-center text-xs text-slate-400 dark:text-slate-500">
         By signing in, you agree to our{" "}
-        <Link href="/terms" className="underline hover:text-slate-600 dark:hover:text-slate-300">
+        <Link
+          href="/terms"
+          className="underline hover:text-slate-600 dark:hover:text-slate-300"
+        >
           Terms
         </Link>{" "}
         and{" "}
-        <Link href="/privacy" className="underline hover:text-slate-600 dark:hover:text-slate-300">
+        <Link
+          href="/privacy"
+          className="underline hover:text-slate-600 dark:hover:text-slate-300"
+        >
           Privacy Policy
         </Link>
       </p>

@@ -35,7 +35,7 @@ export default function Error({
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <button
             onClick={reset}
-            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-700"
+            className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
           >
             <RotateCcw className="h-4 w-4" />
             Try Again
