@@ -141,7 +141,22 @@ export function Navbar() {
                 </div>
               )}
             </div>
-          ) : null}
+          ) : (
+            <div className="flex items-center gap-2 ml-1">
+              <Link
+                href="/signin"
+                className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/register"
+                className={cn(buttonVariants({ variant: "default", size: "sm" }), "bg-emerald-600 hover:bg-emerald-700 text-white")}
+              >
+                Get Started
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Mobile Actions */}
@@ -214,7 +229,24 @@ export function Navbar() {
                     <LogOut className="mr-2 h-4 w-4" />
                     Sign Out
                   </button>
-                ) : null}
+                ) : (
+                  <>
+                    <Link
+                      href="/signin"
+                      onClick={() => setOpen(false)}
+                      className={cn(buttonVariants({ variant: "outline" }), "w-full justify-center")}
+                    >
+                      Sign In
+                    </Link>
+                    <Link
+                      href="/register"
+                      onClick={() => setOpen(false)}
+                      className={cn(buttonVariants({ variant: "default" }), "w-full justify-center bg-emerald-600 hover:bg-emerald-700 text-white")}
+                    >
+                      Get Started
+                    </Link>
+                  </>
+                )}
               </div>
             </SheetContent>
           </Sheet>

@@ -1,11 +1,11 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { ArrowRight, Code2 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { Code2, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -90,7 +90,9 @@ export function Footer() {
               </span>
             </Link>
             <p className="mb-6 text-sm leading-relaxed text-slate-400">
-              Empowering candidates worldwide to achieve their dreams of joining the Bangladesh Armed Forces through rigorous, expert-led preparation.
+              Empowering candidates worldwide to achieve their dreams of joining
+              the Bangladesh Armed Forces through rigorous, expert-led
+              preparation.
             </p>
 
             <h4 className="mb-2 text-sm font-semibold text-slate-200">
@@ -135,10 +137,8 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} Defense Academy. All rights reserved.
-          </p>
-          <p className="text-xs text-slate-600">
-            Built with Next.js &middot; Tailwind CSS &middot; shadcn/ui
+            &copy; {new Date().getFullYear()} Defense Academy. All rights
+            reserved.
           </p>
         </div>
       </div>
